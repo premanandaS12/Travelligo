@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">TubesP3B</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="let_s_sign_you_in">Let\'s sign you in.</string>
+    <string name="welcome_back">Welcome back.</string>
+    <string name="you_ve_been_missed">You\'ve been missed!</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="user">User</string>
+    <string name="_430_points">430 Points</string>
+    <string name="book">Book</string>
+    <string name="points">Points</string>
+    <string name="location">Location</string>
+    <string name="valid_until_gopay">Valid until 22/12/2021</string>
+    <string name="cashback_gopay">Cashback Rp 12.000,-</string>
+    <string name="valid_ovo">Valid until 22/12/2021</string>
+    <string name="cashback_ovo">Cashback Rp 10.000,-</string>
+    <string name="ongoing_promos">Ongoing Promos</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="valid_shopeepay">Valid until 22/12/2021</string>
+    <string name="cashback_shopeepay">Cashback Rp 30.000,-</string>
+</resources>
