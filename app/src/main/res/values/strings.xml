@@ -58,4 +58,9 @@
 
     <!--    location_list-->
     <string name="tv_location">Bandung</string>
+    <string name="booking_id">Booking id:</string>
+    <string name="bandung_jalan_dipatiukur_no_62">Bandung | Jalan Dipatiukur no. 62</string>
+    <string name="nama_pemesan">Nama pemesan:</string>
+    <string name="tanggal_keberangkatan">Tanggal Keberangkatan: </string>
+    <string name="jam_keberangkatan">Jam Keberangkatan:</string>
 </resources>
