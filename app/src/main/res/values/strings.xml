@@ -21,4 +21,41 @@
     <string name="contact_us">Contact Us</string>
     <string name="valid_shopeepay">Valid until 22/12/2021</string>
     <string name="cashback_shopeepay">Cashback Rp 30.000,-</string>
+
+    <!--    fragment_pembayaran-->
+    <string name="tv_pembayaran">Pembayaran</string>
+    <string name="tv_asal">Asal : </string>
+    <string name="tv_asalkota">Jakarta</string>
+    <string name="tv_tujuan">Tujuan : </string>
+    <string name="tv_kotatujuan">Bandung</string>
+    <string name="tv_tanggalstr">Tanggal  </string>
+    <string name="tv_tanggal">1 Jan 2022 04:00</string>
+    <string name="tv_seat">Seat : </string>
+    <string name="tv_seatint">1,4</string>
+    <string name="tv_harga">Harga : </string>
+    <string name="tv_hargaint">200.000</string>
+    <string name="tv_diskon">Diskon : </string>
+    <string name="tv_diskonint">0</string>
+    <string name="tv_total">Total : </string>
+    <string name="tv_totalint">200.000</string>
+    <string name="but_pesan">Order</string>
+    <string name="but_cancel">Batal</string>
+
+    <!--    fragment_tiket-->
+    <string name="tv_tiket">Tiket</string>
+    <string name="tv_id">ID Tiket : </string>
+    <string name="tv_idtiket">89165</string>
+    <string name="tv_tanggalaja">1 Jan 2022</string>
+    <string name="tv_jamstr">Jam</string>
+    <string name="tv_jam">04.00</string>
+    <string name="tv_nama">Nama : </string>
+    <string name="tv_namapemesan">Anton Budiman</string>
+
+    <!--    frgament_point-->
+    <string name="tv_point">Points</string>
+    <string name="tv_points">Points : </string>
+    <string name="tv_pointint">430</string>
+
+    <!--    location_list-->
+    <string name="tv_location">Bandung</string>
 </resources>
