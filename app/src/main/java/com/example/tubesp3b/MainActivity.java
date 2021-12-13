@@ -44,5 +44,12 @@ public class MainActivity extends AppCompatActivity{
         navController = Navigation.findNavController(this, R.id.fragmentContainerView);
         NavigationUI.setupWithNavController(this.binding.bottomNavigationView, navController);
 
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
     }
 }
