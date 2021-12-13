@@ -3,14 +3,10 @@ package com.example.tubesp3b;
 public class User {
     private String username;
     private String password;
-    private String token;
-    private String message;
 
     public User(String username, String password){
         this.username = username;
         this.password = password;
-        this.token="";
-        this.message = "";
     }
 
     public void setUsername(String username) {
@@ -29,19 +25,4 @@ public class User {
         return password;
     }
 
-    public void setToken(String token) {
-        this.token = token;
-    }
-
-    public String getToken() {
-        return token;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
 }
