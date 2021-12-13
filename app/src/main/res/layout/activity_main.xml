@@ -19,7 +19,7 @@
         android:layout_height="fill_parent"
         android:layout_below="@+id/toolbar"
         app:defaultNavHost="true"
-        app:navGraph="@navigation/my_navigation"/>
+        app:navGraph="@navigation/my_navigation" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         app:itemIconTint="@drawable/tab_color"
