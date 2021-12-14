@@ -245,6 +245,14 @@ public class MainPresenter {
         this.orderHist.add(travelOrder);
     }
 
+    public boolean isLogin(){
+        if(this.loginMessage.getToken().equals(null) || this.loginMessage.getToken().equals("")){
+            return false;
+        }else{
+            return true;
+        }
+    }
+
 
 
 

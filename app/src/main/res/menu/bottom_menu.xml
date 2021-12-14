@@ -4,4 +4,5 @@
     <item android:title="Book Now" android:icon="@drawable/ic_book_now" android:id="@+id/bookNowFragment"/>
     <item android:title="My Booking" android:icon="@drawable/ic_booking_hist" android:id="@+id/myBookingHistoryFragment"/>
     <item android:title="Profile" android:icon="@drawable/ic_person" android:id="@+id/profileFragment"/>
+    <item android:title="Tiket" android:icon="@drawable/ic_tiket" android:id="@+id/fra"/>
 </menu>

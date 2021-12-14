@@ -14,6 +14,7 @@ import androidx.navigation.ui.NavigationUI;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.example.tubesp3b.databinding.ActivityMainBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -44,12 +45,17 @@ public class MainActivity extends AppCompatActivity{
         navController = Navigation.findNavController(this, R.id.fragmentContainerView);
         NavigationUI.setupWithNavController(this.binding.bottomNavigationView, navController);
 
+//        BottomNavigationView navbar = findViewById(R.id.bottomNavigationView);
+//        this.binding.bottomNavigationView.setVisibility(View.GONE);
+
+
+
+
 
     }
 
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-
     }
 }

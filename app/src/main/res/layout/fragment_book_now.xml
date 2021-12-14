@@ -118,7 +118,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
                         android:gravity="center"
-                        android:text="Waktu Perjalanan"
+                        android:text="Tanggal Perjalanan"
                         android:textAllCaps="true"
                         android:textColor="@color/blue_theme_secondary"
                         android:textSize="19sp"
@@ -155,23 +155,23 @@
                     android:padding="10dp">
 
                     <TextView
-                        android:id="@+id/coba"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
                         android:gravity="center"
-                        android:text="UKURAN MOBIL"
+                        android:text="Waktu Berangkat"
                         android:textAllCaps="true"
                         android:textColor="@color/blue_theme_secondary"
                         android:textSize="19sp"
                         android:textStyle="bold" />
 
                     <Spinner
-                        android:id="@+id/jenisMobil"
+                        android:id="@+id/waktu_berangkat"
                         android:layout_width="match_parent"
                         android:layout_height="50dp" />
 
                 </LinearLayout>
+
 
             </com.google.android.material.card.MaterialCardView>
 
