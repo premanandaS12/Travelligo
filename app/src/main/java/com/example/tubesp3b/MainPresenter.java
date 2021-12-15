@@ -2,6 +2,7 @@ package com.example.tubesp3b;
 
 import android.content.Context;
 import android.net.Uri;
+import android.util.Log;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -47,6 +48,7 @@ public class MainPresenter {
     private List<Payload> rute;
     private TravelCourses currentCourse;
     private List<TravelOrderHist> orderHist;
+    private DbHelper dbHelper;
 
     public MainPresenter(IMainActivity view, MainActivity activity, Context context){
         this.ui = view;
@@ -56,9 +58,11 @@ public class MainPresenter {
         this.requestQueue = Volley.newRequestQueue(context);
         this.rute = new ArrayList<Payload>();
         this.orderHist = new ArrayList<TravelOrderHist>();
+        this.dbHelper = new DbHelper(context);
     }
 
     public void authenticateLogin(String username, String password){
+        Log.d("login","msk login");
         User user = new User(username,password);
         String json = gson.toJson(user);
         try {
@@ -86,6 +90,8 @@ public class MainPresenter {
 
     public void setLoginMessage(LoginMessage loginMessage){
         this.loginMessage = loginMessage;
+        this.dbHelper.addToken(this.loginMessage.getToken());
+        this.ui.changePage(1);
     }
 
     public void getRoutes(){
@@ -114,8 +120,7 @@ public class MainPresenter {
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String,String> headers= new HashMap<String,String>();
-                headers.put("Bearer", loginMessage.getBearer());
-                headers.put("Token", loginMessage.getToken());
+                headers.put("Authorization", "Bearer "+loginMessage.getToken());
                 return headers;
 //                return super.getHeaders();
             }
@@ -157,8 +162,7 @@ public class MainPresenter {
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String,String> headers= new HashMap<String,String>();
-                headers.put("Bearer", loginMessage.getBearer());
-                headers.put("Token", loginMessage.getToken());
+                headers.put("Authorization", "Bearer "+loginMessage.getToken());
                 return headers;
 //                return super.getHeaders();
             }
@@ -194,8 +198,7 @@ public class MainPresenter {
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String,String> headers= new HashMap<String,String>();
-                headers.put("Bearer", loginMessage.getBearer());
-                headers.put("Token", loginMessage.getToken());
+                headers.put("Authorization", "Bearer "+loginMessage.getToken());
                 return headers;
 //                return super.getHeaders();
             }
@@ -245,8 +248,10 @@ public class MainPresenter {
         this.orderHist.add(travelOrder);
     }
 
-    public boolean isLogin(){
-        if(this.loginMessage.getToken().equals(null) || this.loginMessage.getToken().equals("")){
+    public Boolean isLogin(){
+//        Log.d("pjgToken",String.valueOf(this.loginMessage.getToken().length()));
+        String token = this.dbHelper.getToken();
+        if(null==token || token.equals("")){
             return false;
         }else{
             return true;

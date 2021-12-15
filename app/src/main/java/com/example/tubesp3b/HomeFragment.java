@@ -1,64 +1,80 @@
 package com.example.tubesp3b;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link HomeFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class HomeFragment extends Fragment {
+import com.example.tubesp3b.databinding.FragmentHomeBinding;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+public class HomeFragment extends Fragment implements View.OnClickListener {
+    private Context context;
+    private MainActivity activity;
+    private MainPresenter mainPresenter;
+    private FragmentHomeBinding binding;
 
-    public HomeFragment() {
-        // Required empty public constructor
+    public HomeFragment(MainActivity activity, Context context) {
+        this.activity = activity;
+        this.context = context;
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment HomeFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static HomeFragment newInstance(String param1, String param2) {
-        HomeFragment fragment = new HomeFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
+    public static HomeFragment newInstance(MainActivity activity, Context context) {
+        HomeFragment fragment = new HomeFragment(activity, context);
         return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        this.binding = FragmentHomeBinding.inflate(inflater,container,false);
+        this.binding.btnBook.setOnClickListener(this);
+        this.binding.btnPoint.setOnClickListener(this);
+        this.binding.btnLocation.setOnClickListener(this);
+        this.binding.btnTelp.setOnClickListener(this);
+        this.binding.btnWa.setOnClickListener(this);
+        this.binding.gopayPromos.setOnClickListener(this);
+        this.binding.ovoPromos.setOnClickListener(this);
+        this.binding.shopeepayPromos.setOnClickListener(this);
+        return this.binding.getRoot();
+    }
+
+    @Override
+    public void onClick(View view) {
+        if(view==this.binding.btnBook){
+            Log.d("msk tombol","pencet");
+            Bundle args = new Bundle();
+            args.putInt("page",2);
+            this.getParentFragmentManager().setFragmentResult("changePage",args);
+        }else if(view==this.binding.btnPoint){
+//            Bundle args = new Bundle();
+//            args.putInt("page",2);
+//            this.getParentFragmentManager().setFragmentResult("changePage",args);
+        }else if(view==this.binding.btnPoint){
+//            Bundle args = new Bundle();
+//            args.putInt("page",2);
+//            this.getParentFragmentManager().setFragmentResult("changePage",args);
+        }else if(view==this.binding.gopayPromos){
+//            Bundle args = new Bundle();
+//            args.putInt("page",2);
+//            this.getParentFragmentManager().setFragmentResult("changePage",args);
+        }else if(view==this.binding.ovoPromos){
+//            Bundle args = new Bundle();
+//            args.putInt("page",2);
+//            this.getParentFragmentManager().setFragmentResult("changePage",args);
+        }else if(view==this.binding.shopeepayPromos){
+//            Bundle args = new Bundle();
+//            args.putInt("page",2);
+//            this.getParentFragmentManager().setFragmentResult("changePage",args);
+        }else if(view==this.binding.btnTelp){
+
+        }else if(view==this.binding.btnWa){
+
+        }
     }
 }

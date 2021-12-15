@@ -1,64 +1,98 @@
 package com.example.tubesp3b;
 
+import android.app.DatePickerDialog;
+import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.DatePicker;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link BookNowFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class BookNowFragment extends Fragment {
+import com.example.tubesp3b.databinding.FragmentBookNowBinding;
+import com.example.tubesp3b.databinding.FragmentHomeBinding;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
-    public BookNowFragment() {
-        // Required empty public constructor
+public class BookNowFragment extends Fragment implements View.OnClickListener, IMainActivity {
+    private Context context;
+    private MainActivity activity;
+    private MainPresenter mainPresenter;
+    private FragmentBookNowBinding binding;
+    private DatePickerDialog.OnDateSetListener dateListener;
+
+    public BookNowFragment(MainActivity activity, Context context) {
+        this.activity = activity;
+        this.context = context;
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment BookNowFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static BookNowFragment newInstance(String param1, String param2) {
-        BookNowFragment fragment = new BookNowFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
+    public static BookNowFragment newInstance(MainActivity activity, Context context) {
+        BookNowFragment fragment = new BookNowFragment(activity, context);
         return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_book_now, container, false);
+        this.binding = FragmentBookNowBinding.inflate(inflater,container,false);
+        this.mainPresenter = new MainPresenter(this, activity, context);
+
+        this.binding.tanggalBerangkat.setOnClickListener(this);
+
+        dateListener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int tahun, int bulan, int tanggal) {
+                bulan+=1;
+                Log.d("tanggal", String.valueOf(tanggal)+" - "+ String.valueOf(bulan)+" - "+String.valueOf(tahun));
+            }
+        };
+
+//        Spinner
+        String[] kotaAsal = new String[]{"Jakarta, Bandung, Bekasi"};
+        List<String> kota = new ArrayList<String>();
+        kota.add("Jakarta");
+        kota.add("Bandung");
+        kota.add("Bekasi");
+
+        ArrayAdapter<String> adapterAsal= new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item, kota);
+        ArrayAdapter<String> adapterTujuan= new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item, kota);
+        adapterAsal.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapterTujuan.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        this.binding.asal.setAdapter(adapterAsal);
+        this.binding.tujuan.setAdapter(adapterAsal);
+        return this.binding.getRoot();
+    }
+
+    @Override
+    public void onClick(View view) {
+        if(view==this.binding.tanggalBerangkat){
+            Calendar cal = Calendar.getInstance();
+            int tahun = cal.get(Calendar.YEAR);
+            int bulan = cal.get(Calendar.MONTH);
+            int tanggal = cal.get(Calendar.DAY_OF_MONTH);
+
+            DatePickerDialog d = new DatePickerDialog(context, android.R.style.Theme_Holo_Light_Dialog_MinWidth, dateListener, tahun, bulan, tanggal);
+            d.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            d.show();
+        }
+    }
+
+    @Override
+    public void toastMessage(String msg) {
+
+    }
+
+    @Override
+    public void changePage(int page) {
+
     }
 }
