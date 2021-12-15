@@ -53,6 +53,7 @@ public class BookNowFragment extends Fragment implements View.OnClickListener, I
             public void onDateSet(DatePicker datePicker, int tahun, int bulan, int tanggal) {
                 bulan+=1;
                 Log.d("tanggal", String.valueOf(tanggal)+" - "+ String.valueOf(bulan)+" - "+String.valueOf(tahun));
+                binding.tanggalBerangkat.setText(String.valueOf(tanggal)+" - "+ String.valueOf(bulan)+" - "+String.valueOf(tahun));
             }
         };
 
