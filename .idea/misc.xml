@@ -3,20 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Kuli-Ah/Tubes 2 P3B/pppb51_tubes02_a_h/app/src/main/res/drawable/ic_baseline_access_alarm_24.xml" value="0.3769230769230769" />
-        <entry key="..\:/Kuli-Ah/Tubes 2 P3B/pppb51_tubes02_a_h/app/src/main/res/drawable/ic_clock.xml" value="0.3769230769230769" />
-        <entry key="..\:/Kuli-Ah/Tubes 2 P3B/pppb51_tubes02_a_h/app/src/main/res/drawable/ic_date.xml" value="0.3769230769230769" />
-        <entry key="..\:/Kuli-Ah/Tubes 2 P3B/pppb51_tubes02_a_h/app/src/main/res/layout/fragment_book_now.xml" value="0.2957427536231884" />
-        <entry key="..\:/Kuli-Ah/Tubes 2 P3B/pppb51_tubes02_a_h/app/src/main/res/layout/fragment_select_seat.xml" value="0.2957427536231884" />
-        <entry key="..\:/Kuli-Ah/Tubes 2 P3B/pppb51_tubes02_a_h/app/src/main/res/layout/fragment_tiket.xml" value="0.2957427536231884" />
-        <entry key="..\:/Kuli-Ah/Tubes 2 P3B/pppb51_tubes02_a_h/app/src/main/res/layout/fragment_tiket_item.xml" value="0.2957427536231884" />
         <entry key="..\:/PPPB51_Tubes02_A_H/app/src/main/res/drawable/bg_home_wave.xml" value="0.22135416666666666" />
-        <entry key="..\:/PPPB51_Tubes02_A_H/app/src/main/res/drawable/ic_arrow_back_white_24dp.xml" value="0.22135416666666666" />
-        <entry key="..\:/PPPB51_Tubes02_A_H/app/src/main/res/drawable/ic_book_now.xml" value="0.12760416666666666" />
         <entry key="..\:/PPPB51_Tubes02_A_H/app/src/main/res/drawable/ic_booking_hist.xml" value="0.3175925925925926" />
-        <entry key="..\:/PPPB51_Tubes02_A_H/app/src/main/res/drawable/ic_date.xml" value="0.3453125" />
-        <entry key="..\:/PPPB51_Tubes02_A_H/app/src/main/res/drawable/ic_home.xml" value="0.12760416666666666" />
-        <entry key="..\:/PPPB51_Tubes02_A_H/app/src/main/res/drawable/rounded_button.xml" value="0.3769230769230769" />
         <entry key="..\:/PPPB51_Tubes02_A_H/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
         <entry key="..\:/PPPB51_Tubes02_A_H/app/src/main/res/layout/fragment_book_now.xml" value="0.36666666666666664" />
         <entry key="..\:/PPPB51_Tubes02_A_H/app/src/main/res/layout/fragment_home.xml" value="0.35507246376811596" />
@@ -25,14 +13,29 @@
         <entry key="..\:/PPPB51_Tubes02_A_H/app/src/main/res/layout/fragment_login.xml" value="0.33016304347826086" />
         <entry key="..\:/PPPB51_Tubes02_A_H/app/src/main/res/layout/fragment_my_booking_history.xml" value="0.360054347826087" />
         <entry key="..\:/PPPB51_Tubes02_A_H/app/src/main/res/layout/fragment_my_booking_history_item.xml" value="0.3500905797101449" />
-        <entry key="..\:/PPPB51_Tubes02_A_H/app/src/main/res/layout/fragment_pembayaran.xml" value="0.20520833333333333" />
-        <entry key="..\:/PPPB51_Tubes02_A_H/app/src/main/res/layout/fragment_point.xml" value="0.184375" />
         <entry key="..\:/PPPB51_Tubes02_A_H/app/src/main/res/layout/fragment_profile.xml" value="0.5620542082738944" />
         <entry key="..\:/PPPB51_Tubes02_A_H/app/src/main/res/layout/fragment_select_seat.xml" value="0.36666666666666664" />
-        <entry key="..\:/PPPB51_Tubes02_A_H/app/src/main/res/layout/fragment_select_seat_kecil.xml" value="0.20520833333333333" />
-        <entry key="..\:/PPPB51_Tubes02_A_H/app/src/main/res/layout/fragment_tiket.xml" value="0.36666666666666664" />
-        <entry key="..\:/PPPB51_Tubes02_A_H/app/src/main/res/layout/toolbar.xml" value="0.18854166666666666" />
         <entry key="..\:/PPPB51_Tubes02_A_H/app/src/main/res/menu/bottom_menu.xml" value="0.36666666666666664" />
+        <entry key="..\:/Tubes P3B (new)/app/src/main/res/drawable/rounded_button.xml" value="0.2169230769230769" />
+        <entry key="..\:/Tubes P3B (new)/app/src/main/res/drawable/rounded_item.xml" value="0.2169230769230769" />
+        <entry key="..\:/Tubes P3B (new)/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Tubes P3B (new)/app/src/main/res/layout/fragment_book_now.xml" value="0.22" />
+        <entry key="..\:/Tubes P3B (new)/app/src/main/res/layout/fragment_gopay.xml" value="0.20416666666666666" />
+        <entry key="..\:/Tubes P3B (new)/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/Tubes P3B (new)/app/src/main/res/layout/fragment_list_tiket.xml" value="0.20416666666666666" />
+        <entry key="..\:/Tubes P3B (new)/app/src/main/res/layout/fragment_location.xml" value="0.1" />
+        <entry key="..\:/Tubes P3B (new)/app/src/main/res/layout/fragment_location_item.xml" value="0.18" />
+        <entry key="..\:/Tubes P3B (new)/app/src/main/res/layout/fragment_login.xml" value="0.16" />
+        <entry key="..\:/Tubes P3B (new)/app/src/main/res/layout/fragment_my_booking_history.xml" value="0.1" />
+        <entry key="..\:/Tubes P3B (new)/app/src/main/res/layout/fragment_ovo.xml" value="0.1" />
+        <entry key="..\:/Tubes P3B (new)/app/src/main/res/layout/fragment_pembayaran.xml" value="0.22" />
+        <entry key="..\:/Tubes P3B (new)/app/src/main/res/layout/fragment_profile.xml" value="0.13496376811594202" />
+        <entry key="..\:/Tubes P3B (new)/app/src/main/res/layout/fragment_select_seat.xml" value="0.20416666666666666" />
+        <entry key="..\:/Tubes P3B (new)/app/src/main/res/layout/fragment_select_seat_kecil.xml" value="0.13496376811594202" />
+        <entry key="..\:/Tubes P3B (new)/app/src/main/res/layout/fragment_shopee.xml" value="0.20416666666666666" />
+        <entry key="..\:/Tubes P3B (new)/app/src/main/res/layout/fragment_tiket.xml" value="0.22" />
+        <entry key="..\:/Tubes P3B (new)/app/src/main/res/layout/fragment_tiket_item.xml" value="0.25" />
+        <entry key="..\:/Tubes P3B (new)/app/src/main/res/menu/bottom_menu.xml" value="0.18425925925925926" />
         <entry key="..\:/Tubes-2-P3b/app/src/main/res/drawable/ic_baseline_location_on_24.xml" value="0.2140625" />
         <entry key="..\:/Tubes-2-P3b/app/src/main/res/drawable/ic_book_now.xml" value="0.32314814814814813" />
         <entry key="..\:/Tubes-2-P3b/app/src/main/res/drawable/ic_booking_hist.xml" value="0.22135416666666666" />

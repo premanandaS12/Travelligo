@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_weight=".8"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_ovo"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="200dp"
+        android:paddingTop="20dp"
+        android:paddingLeft="20dp"
+        android:background="@color/main_font_color">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cashback Rp 10.000"
+            android:textSize="30dp"
+            android:layout_marginBottom="30dp"
+            android:textColor="@color/blue_theme"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dapatkan cashback sebesar Rp 10.000 saat bayar tiket dengan Ovo."
+            android:textSize="20dp"
+            android:textColor="@color/blue_theme"/>
+    </LinearLayout>
+
+</RelativeLayout>
