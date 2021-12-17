@@ -15,7 +15,7 @@ import java.util.List;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class SeatLayoutKecil extends AppCompatActivity implements View.onClickListener {
+public class SeatLayoutKecil extends AppCompatActivity implements View.OnClickListener {
     ViewGroup layout;
 
     String seats = "AA"
@@ -28,11 +28,12 @@ public class SeatLayoutKecil extends AppCompatActivity implements View.onClickLi
     int status_available = 1;
     int Status_booked = 2;
     String selectedId = "";
+    int seatGaping = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_select_seat_kecil;
+        setContentView(R.layout.fragment_select_seat_kecil);
 
         layout = findViewById(R.id.layoutSeat);
 
@@ -105,4 +106,4 @@ public class SeatLayoutKecil extends AppCompatActivity implements View.onClickLi
         }
     }
 }
-}
+

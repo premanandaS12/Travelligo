@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.tubesp3b.databinding.FragmentOvoBinding;
 
 public class OvoFragment extends Fragment implements View.OnClickListener {
@@ -38,6 +40,11 @@ public class OvoFragment extends Fragment implements View.OnClickListener {
         // Inflate the layout for this fragment
         binding = FragmentOvoBinding.inflate(inflater);
         View view = binding.getRoot();
+
+        Glide.with(this.activity)
+                .load("https://commons.wikimedia.org/wiki/File:Logo_ovo_purple.svg#/media/File:Logo_ovo_purple.svg")
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .into(this.binding.ivOvo);
 
         return view;
     }

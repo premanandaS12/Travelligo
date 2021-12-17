@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_weight=".8"
+        android:layout_height="0dp"
+        android:layout_weight=".4"
         android:scaleType="centerCrop"
-        android:src="@mipmap/ic_gopay"
-        />
+        android:id="@+id/iv_gopay"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".6"
         android:orientation="vertical"
-        android:layout_marginTop="200dp"
         android:paddingTop="20dp"
         android:paddingLeft="20dp"
-        android:background="@color/main_font_color">
+        android:background="@drawable/rounded_item_2">
 
         <TextView
             android:layout_width="wrap_content"
@@ -28,6 +28,7 @@
             android:text="Cashback Rp 12.000"
             android:textSize="30dp"
             android:layout_marginBottom="30dp"
+            android:layout_marginTop="25dp"
             android:textColor="@color/blue_theme"/>
 
         <TextView
@@ -38,4 +39,4 @@
             android:textColor="@color/blue_theme"/>
     </LinearLayout>
 
-</RelativeLayout>
+</LinearLayout>

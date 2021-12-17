@@ -61,14 +61,14 @@
                         android:src="@drawable/bus_image_3" />
 
                     <TextView
-                        android:id="@+id/textView"
+                        android:id="@+id/textView_selectseat_kecil"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="16dp"
                         android:fontFamily="@font/print_clearly"
-                        android:text="Select your Seat!"
+                        android:text="@string/select_your_seat"
                         android:textAlignment="center"
                         android:textColor="#FFFFFF"
                         android:textSize="18sp" />
@@ -77,7 +77,7 @@
                         android:id="@+id/linearLayout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/textView"
+                        android:layout_below="@+id/textView_selectseat_kecil"
                         android:layout_marginTop="8dp"
                         android:orientation="horizontal"
                         android:weightSum="100">
@@ -88,7 +88,7 @@
                             android:layout_height="match_parent"
                             android:layout_weight="45"
                             android:fontFamily="@font/gotham"
-                            android:text="Bandung"
+                            android:text="@string/bandung"
                             android:textAlignment="center"
                             android:textColor="#FFFFFF"
                             android:textSize="18sp" />
@@ -106,7 +106,7 @@
                             android:layout_height="match_parent"
                             android:layout_weight="45"
                             android:fontFamily="@font/gotham"
-                            android:text="Jakarta"
+                            android:text="@string/jakarta"
                             android:textAlignment="center"
                             android:textColor="#FFFFFF"
                             android:textSize="18sp" />
@@ -121,7 +121,7 @@
                         android:layout_below="@+id/linearLayout"
                         android:layout_marginTop="8dp"
                         android:fontFamily="@font/print_clearly"
-                        android:text="08th - Des - 2021 | Wednesday"
+                        android:text="@string/_08th_des_2021_wednesday"
                         android:textAlignment="center"
                         android:textColor="#FFFFFF"
                         android:textSize="18sp" />
@@ -160,7 +160,7 @@
                                     android:layout_marginTop="4dp"
                                     android:layout_marginBottom="4dp"
                                     android:fontFamily="@font/calibri"
-                                    android:text="Mobil Kecil"
+                                    android:text="@string/mobil_kecil"
                                     android:textColor="#4b4b4b"
                                     android:textStyle="bold" />
 
@@ -168,7 +168,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/calibri"
-                                    android:text="A/C Sleeper (2 Seats)"
+                                    android:text="@string/a_c_sleeper_2_seats"
                                     android:textColor="#8a8a8a" />
 
                             </LinearLayout>
@@ -185,7 +185,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/calibri"
-                                    android:text="Rp.180.000"
+                                    android:text="@string/rp_180_000"
                                     android:textAlignment="textEnd"
                                     android:textColor="#f5a622"
                                     android:textSize="24sp"
@@ -232,13 +232,13 @@
                                     android:layout_width="16dp"
                                     android:layout_height="16dp"
                                     android:layout_marginEnd="4dp"
-                                    android:src="@drawable/booked_img" />
+                                    android:src="@drawable/booked_img"/>
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/calibri"
-                                    android:text="Booked"
+                                    android:text="@string/booked"
                                     android:textAlignment="center"
                                     android:textColor="#b2b2b2" />
 
@@ -261,7 +261,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/calibri"
-                                    android:text="Available"
+                                    android:text="@string/available"
                                     android:textAlignment="center"
                                     android:textColor="#b2b2b2" />
                             </LinearLayout>
@@ -282,7 +282,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/calibri"
-                                    android:text="Your Seat"
+                                    android:text="@string/your_seat"
                                     android:textAlignment="center"
                                     android:textColor="#b2b2b2" />
                             </LinearLayout>
@@ -308,7 +308,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginEnd="16dp"
                                     android:fontFamily="@font/print_clearly"
-                                    android:text="1"
+                                    android:text="@string/_1"
                                     android:textColor="#c3c3c3"
                                     android:textSize="18sp"
                                     android:textStyle="bold"
@@ -319,7 +319,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginEnd="4dp"
                                     android:fontFamily="@font/print_clearly"
-                                    android:text="A"
+                                    android:text="@string/a"
                                     android:textAlignment="center"
                                     android:textColor="#c3c3c3"
                                     android:textSize="18sp"
@@ -330,7 +330,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="4dp"
                                     android:fontFamily="@font/print_clearly"
-                                    android:text="B"
+                                    android:text="@string/b"
                                     android:textAlignment="center"
                                     android:textColor="#c3c3c3"
                                     android:textSize="18sp"
@@ -365,7 +365,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginEnd="16dp"
                                     android:fontFamily="@font/print_clearly"
-                                    android:text="1"
+                                    android:text="@string/_1"
                                     android:textColor="#c3c3c3"
                                     android:textSize="18sp"
                                     android:textStyle="bold" />
@@ -374,13 +374,15 @@
                                     android:layout_width="36dp"
                                     android:layout_height="36dp"
                                     android:layout_marginEnd="4dp"
-                                    android:src="@drawable/booked_img" />
+                                    android:src="@drawable/booked_img"
+                                    android:id="@+id/iv_kecil_1a"/>
 
                                 <ImageView
                                     android:layout_width="36dp"
                                     android:layout_height="36dp"
                                     android:layout_marginStart="4dp"
-                                    android:src="@drawable/available_img" />
+                                    android:src="@drawable/available_img"
+                                    android:id="@+id/iv_kecil_1b"/>
 
                             </LinearLayout>
 
@@ -405,7 +407,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginEnd="16dp"
                                     android:fontFamily="@font/print_clearly"
-                                    android:text="2"
+                                    android:text="@string/_2"
                                     android:textColor="#c3c3c3"
                                     android:textSize="18sp"
                                     android:textStyle="bold" />
@@ -414,13 +416,15 @@
                                     android:layout_width="36dp"
                                     android:layout_height="36dp"
                                     android:layout_marginEnd="4dp"
-                                    android:src="@drawable/available_img" />
+                                    android:src="@drawable/available_img"
+                                    android:id="@+id/iv_kecil_2a"/>
 
                                 <ImageView
                                     android:layout_width="36dp"
                                     android:layout_height="36dp"
                                     android:layout_marginStart="4dp"
-                                    android:src="@drawable/booked_img" />
+                                    android:src="@drawable/booked_img"
+                                    android:id="@+id/iv_kecil_2b"/>
 
                             </LinearLayout>
 
@@ -450,7 +454,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginEnd="16dp"
                                     android:fontFamily="@font/print_clearly"
-                                    android:text="3"
+                                    android:text="@string/_3"
                                     android:textColor="#c3c3c3"
                                     android:textSize="18sp"
                                     android:textStyle="bold" />
@@ -459,13 +463,15 @@
                                     android:layout_width="36dp"
                                     android:layout_height="36dp"
                                     android:layout_marginEnd="4dp"
-                                    android:src="@drawable/available_img" />
+                                    android:src="@drawable/available_img"
+                                    android:id="@+id/iv_kecil_3a"/>
 
                                 <ImageView
                                     android:layout_width="36dp"
                                     android:layout_height="36dp"
                                     android:layout_marginStart="4dp"
-                                    android:src="@drawable/available_img" />
+                                    android:src="@drawable/available_img"
+                                    android:id="@+id/iv_kecil_3b"/>
 
                             </LinearLayout>
 

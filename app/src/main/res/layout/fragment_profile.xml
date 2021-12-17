@@ -62,7 +62,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:text="Profile"
+                            android:text="@string/tv_profile"
                             android:textColor="@color/blue_theme_secondary"
                             android:textSize="19sp"
                             android:textStyle="bold" />
@@ -73,7 +73,7 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/idSewa"
                             android:layout_marginTop="20dp"
-                            android:text="Nama Pengguna :"
+                            android:text="@string/tv_nama_pengguna"
                             android:textColor="@android:color/black"
                             android:textSize="17sp" />
 
@@ -82,7 +82,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/txtName"
-                            android:text="User"
+                            android:text="@string/tv_user"
                             android:textSize="16sp" />
 
                         <TextView
@@ -91,7 +91,7 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/lblName"
                             android:layout_marginTop="20dp"
-                            android:text="Nama Id :"
+                            android:text="@string/tv_nama_id"
                             android:textColor="@android:color/black"
                             android:textSize="17sp" />
 
@@ -100,7 +100,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/txtId"
-                            android:text="id"
+                            android:text="@string/tv_id_profile"
                             android:textSize="16sp" />
 
                         <TextView
@@ -109,7 +109,7 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/lblId"
                             android:layout_marginTop="20dp"
-                            android:text="Total Poin :"
+                            android:text="@string/tv_total_poin"
                             android:textColor="@android:color/black"
                             android:textSize="17sp" />
 
@@ -118,7 +118,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/txtPoin"
-                            android:text="400"
+                            android:text="@string/tv_400"
                             android:textSize="16sp" />
 
                         <Button
@@ -127,7 +127,7 @@
                             android:layout_below="@id/txtPoin"
                             android:layout_centerInParent="true"
                             android:layout_marginTop="20sp"
-                            android:text="Logout" />
+                            android:text="@string/tv_logout" />
 
 
                     </RelativeLayout>

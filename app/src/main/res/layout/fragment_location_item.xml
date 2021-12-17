@@ -20,7 +20,7 @@
             android:id="@+id/city_location"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Bandung"
+            android:text="@string/tv_bandung_location"
             android:layout_marginLeft="20dp"
             android:textSize="20sp"
             android:layout_marginBottom="10sp"
@@ -45,18 +45,13 @@
                 android:layout_width="0dp"
                 android:layout_weight=".9"
                 android:layout_height="wrap_content"
-                android:text="Jalan Pasteur No. 16A"
+                android:text="@string/tv_jalan_pasteur"
                 android:layout_marginLeft="20dp"
                 android:textSize="20sp"
                 android:layout_marginBottom="10dp"
                 android:layout_marginRight="10dp"/>
         </LinearLayout>
 
-
     </LinearLayout>
-
-
-
-
 
 </LinearLayout>

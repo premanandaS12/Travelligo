@@ -54,14 +54,14 @@
                     android:layout_height="wrap_content">
 
                     <TextView
-                        android:id="@+id/textView"
+                        android:id="@+id/tv_select_car"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="16dp"
                         android:fontFamily="@font/print_clearly"
-                        android:text="Select your Car!"
+                        android:text="@string/tv_select"
                         android:textAlignment="center"
                         android:textColor="#FFFFFF"
                         android:textSize="18sp" />
@@ -80,7 +80,7 @@
                             android:layout_height="match_parent"
                             android:layout_weight="45"
                             android:fontFamily="@font/gotham"
-                            android:text="Jakarta"
+                            android:text="@string/tv_jakarta"
                             android:textAlignment="center"
                             android:textColor="#FFFFFF"
                             android:textSize="18sp" />
@@ -97,7 +97,7 @@
                             android:layout_height="match_parent"
                             android:layout_weight="45"
                             android:fontFamily="@font/gotham"
-                            android:text="Bandung"
+                            android:text="@string/tv_bandung"
                             android:textAlignment="center"
                             android:textColor="#FFFFFF"
                             android:textSize="18sp" />
@@ -106,13 +106,13 @@
 
 
                     <TextView
-                        android:id="@+id/textView3"
+                        android:id="@+id/tv_tangal_hari_tiket"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/linearLayout"
                         android:layout_marginTop="8dp"
                         android:fontFamily="@font/print_clearly"
-                        android:text="12th - Feb - 2021 | Tuesday"
+                        android:text="@string/tv_tanggalhari"
                         android:textAlignment="center"
                         android:textColor="#FFFFFF"
                         android:textSize="18sp" />
@@ -120,7 +120,7 @@
                 </RelativeLayout>
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/cardView"
+                    android:id="@+id/cv_box_tiket"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
@@ -149,7 +149,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/calibri"
-                                android:text="9:00AM"
+                                android:text="@string/tv_jamam"
                                 android:textColor="#000000"
                                 android:textStyle="bold" />
 
@@ -159,7 +159,7 @@
                                 android:layout_marginTop="4dp"
                                 android:layout_marginBottom="4dp"
                                 android:fontFamily="@font/calibri"
-                                android:text="Bandung - Jakarta"
+                                android:text="@string/tv_asaltujuan"
                                 android:textColor="#4b4b4b"
                                 android:textStyle="bold" />
 
@@ -167,7 +167,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/calibri"
-                                android:text="4 Desember 2021"
+                                android:text="@string/tv_tanggalitem"
                                 android:textColor="#8a8a8a" />
 
                         </LinearLayout>
@@ -183,7 +183,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/calibri"
-                                android:text="Rp. 200.000"
+                                android:text="@string/tv_hargaitem"
                                 android:textAlignment="textEnd"
                                 android:textColor="#f5a622"
                                 android:textSize="24sp"
@@ -223,7 +223,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/calibri"
-                                android:text="10:00AM"
+                                android:text="@string/tv_jamam2"
                                 android:textColor="#000000"
                                 android:textStyle="bold" />
 
@@ -233,7 +233,7 @@
                                 android:layout_marginTop="4dp"
                                 android:layout_marginBottom="4dp"
                                 android:fontFamily="@font/calibri"
-                                android:text="Bandung - Garut"
+                                android:text="@string/tv_bandunggarut"
                                 android:textColor="#4b4b4b"
                                 android:textStyle="bold" />
 
@@ -241,7 +241,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/calibri"
-                                android:text="6 Desember 2021"
+                                android:text="@string/tv_tanggal6"
                                 android:textColor="#8a8a8a" />
 
                         </LinearLayout>
@@ -257,7 +257,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/calibri"
-                                android:text="Rp. 200.000"
+                                android:text="@string/tv_harga200"
                                 android:textAlignment="textEnd"
                                 android:textColor="#f5a622"
                                 android:textSize="24sp"
@@ -295,7 +295,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/calibri"
-                                android:text="12:15PM"
+                                android:text="@string/tv_jamam3"
                                 android:textColor="#000000"
                                 android:textStyle="bold" />
 
@@ -305,7 +305,7 @@
                                 android:layout_marginTop="4dp"
                                 android:layout_marginBottom="4dp"
                                 android:fontFamily="@font/calibri"
-                                android:text="Bandung - Jakarta"
+                                android:text="@string/tv_bandungjakarta"
                                 android:textColor="#4b4b4b"
                                 android:textStyle="bold" />
 
@@ -313,7 +313,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/calibri"
-                                android:text="8 Desember 2021"
+                                android:text="@string/tv_tanggal8"
                                 android:textColor="#8a8a8a" />
 
                         </LinearLayout>
@@ -329,7 +329,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/calibri"
-                                android:text="Rp. 180.000"
+                                android:text="@string/tv_harga180"
                                 android:textAlignment="textEnd"
                                 android:textColor="#f5a622"
                                 android:textSize="24sp"
@@ -367,7 +367,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/calibri"
-                                android:text="3:00PM"
+                                android:text="@string/tv_jamam4"
                                 android:textColor="#000000"
                                 android:textStyle="bold" />
 
@@ -377,7 +377,7 @@
                                 android:layout_marginTop="4dp"
                                 android:layout_marginBottom="4dp"
                                 android:fontFamily="@font/calibri"
-                                android:text="Bandung - Garut"
+                                android:text="@string/tv_bandunggarut2"
                                 android:textColor="#4b4b4b"
                                 android:textStyle="bold" />
 
@@ -385,7 +385,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/calibri"
-                                android:text="10 Desember 2021"
+                                android:text="@string/tv_10des"
                                 android:textColor="#8a8a8a" />
 
                         </LinearLayout>
@@ -401,7 +401,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/calibri"
-                                android:text="Rp. 180.000"
+                                android:text="@string/tv_180"
                                 android:textAlignment="textEnd"
                                 android:textColor="#f5a622"
                                 android:textSize="24sp"
@@ -439,7 +439,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/calibri"
-                                android:text="7:00PM"
+                                android:text="@string/tv_7pm"
                                 android:textColor="#000000"
                                 android:textStyle="bold" />
 
@@ -449,7 +449,7 @@
                                 android:layout_marginTop="4dp"
                                 android:layout_marginBottom="4dp"
                                 android:fontFamily="@font/calibri"
-                                android:text="Jakarta - Bandung"
+                                android:text="@string/tv_jakartabandung2"
                                 android:textColor="#4b4b4b"
                                 android:textStyle="bold" />
 
@@ -457,7 +457,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/calibri"
-                                android:text="12 Desember 2021"
+                                android:text="@string/tv_12des"
                                 android:textColor="#8a8a8a" />
 
                         </LinearLayout>
@@ -473,7 +473,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/calibri"
-                                android:text="Rp. 200.000"
+                                android:text="@string/tv_200"
                                 android:textAlignment="textEnd"
                                 android:textColor="#f5a622"
                                 android:textSize="24sp"

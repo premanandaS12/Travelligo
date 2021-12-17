@@ -15,7 +15,7 @@ import java.util.List;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class SeatLayout extends AppCompatActivity implements View.onClickListener {
+public class SeatLayout extends AppCompatActivity implements View.OnClickListener {
     ViewGroup layout;
 
     String seats = "AA"
@@ -30,6 +30,7 @@ public class SeatLayout extends AppCompatActivity implements View.onClickListene
     int status_available = 1;
     int Status_booked = 2;
     String selectedId = "";
+    int seatGaping = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){

@@ -42,6 +42,9 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     private MyBookingHistoryFragment bookingHist;
     private ProfileFragment profile;
     private LocationFragment location;
+    private GopayFragment gopay;
+    private OvoFragment ovo;
+    private ShopeeFragment shopee;
 
     @SuppressLint("ResourceAsColor")
     @Override
@@ -73,6 +76,9 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 //        this.bookingHist = MyBookingHistoryFragment.newInstance(this,this);
         this.profile = ProfileFragment.newInstance(this,this);
         this.location = LocationFragment.newInstance(this,this);
+        this.gopay = GopayFragment.newInstance(this, this);
+        this.ovo = OvoFragment.newInstance(this, this);
+        this.shopee = ShopeeFragment.newInstance(this, this);
 
         if(this.mainPresenter.isLogin()==true){
             changePage(1);
@@ -144,6 +150,15 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         }else if(page==6){
             Log.d("halaman","6");
             ft.replace(R.id.fragmentContainerView, this.location).addToBackStack(null);
+            this.binding.bottomNavigationView.setVisibility(View.VISIBLE);
+        }else if(page==7){
+            ft.replace(R.id.fragmentContainerView, this.gopay).addToBackStack(null);
+            this.binding.bottomNavigationView.setVisibility(View.VISIBLE);
+        }else if(page==8){
+            ft.replace(R.id.fragmentContainerView, this.ovo).addToBackStack(null);
+            this.binding.bottomNavigationView.setVisibility(View.VISIBLE);
+        }else if(page==9){
+            ft.replace(R.id.fragmentContainerView, this.shopee).addToBackStack(null);
             this.binding.bottomNavigationView.setVisibility(View.VISIBLE);
         }
         ft.commit();

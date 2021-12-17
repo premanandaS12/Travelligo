@@ -50,6 +50,10 @@
     <string name="tv_jam">04.00</string>
     <string name="tv_nama">Nama : </string>
     <string name="tv_namapemesan">Anton Budiman</string>
+    <string name="tv_asaltiket">JKT</string>
+    <string name="tv_tujuantiket">BDG</string>
+    <string name="tv_id_tiket">ID Tiket</string>
+    <string name="tv_seat_tiket">Kursi</string>
 
     <!--    frgament_point-->
     <string name="tv_point">Points</string>
@@ -60,11 +64,100 @@
     <string name="tv_location">Bandung</string>
     <string name="booking_id">Booking id:</string>
     <string name="bandung_jalan_dipatiukur_no_62">Bandung | Jalan Dipatiukur no. 62</string>
-    <string name="nama_pemesan">Nama pemesan</string>
+    <string name="nama_pemesan">Nama</string>
     <string name="tanggal_keberangkatan">Tanggal Keberangkatan: </string>
     <string name="jam_keberangkatan">Jam Keberangkatan:</string>
     <string name="book_hist_asal">Bandung</string>
     <string name="book_hist_tujuan">Jakarta</string>
     <string name="_20_december_2021">20 December 2021</string>
     <string name="seat_number">Seat number</string>
+
+<!--    fragment_tiket_item-->
+    <string name="tv_select">Select your Car!</string>
+    <string name="tv_jakarta">Jakarta</string>
+    <string name="tv_bandung">Bandung</string>
+    <string name="tv_tanggalhari">12th - Feb - 2021 | Tuesday</string>
+    <string name="tv_jamam">9:00AM</string>
+    <string name="tv_asaltujuan">Bandung - Jakarta</string>
+    <string name="tv_tanggalitem">4 Desember 2021</string>
+    <string name="tv_hargaitem">Rp. 200.000</string>
+    <string name="tv_jamam2">10:00AM</string>
+    <string name="tv_bandunggarut">Bandung - Garut</string>
+    <string name="tv_tanggal6">6 Desember 2021</string>
+    <string name="tv_harga200">Rp. 200.000</string>
+    <string name="tv_jamam3">12:15PM</string>
+    <string name="tv_bandungjakarta">Bandung - Jakarta</string>
+    <string name="tv_tanggal8">8 Desember 2021</string>
+    <string name="tv_harga180">Rp. 180.000</string>
+    <string name="tv_jamam4">3:00PM</string>
+    <string name="tv_bandunggarut2">Bandung - Garut</string>
+    <string name="tv_10des">10 Desember 2021</string>
+    <string name="tv_180">Rp. 180.000</string>
+    <string name="tv_7pm">7:00PM</string>
+    <string name="tv_jakartabandung2">Jakarta - Bandung</string>
+    <string name="tv_12des">12 Desember 2021</string>
+    <string name="tv_200">Rp. 200.000</string>
+
+
+    <!--    fragment_select_seat-->
+    <string name="tv_select_seat">Select your Seat!</string>
+    <string name="tv_bandung_seat">Bandung</string>
+    <string name="tv_jakarta_seat">Jakarta</string>
+    <string name="tv_tanggal_seat">08th - Des - 2021 | Wednesday</string>
+    <string name="tv_mobilbesar">Mobil Besar</string>
+    <string name="tv_acsleeper">A/C Sleeper (2 Seats)</string>
+    <string name="tv_hargaseat">Rp.200.000</string>
+    <string name="tv_booked">Booked</string>
+    <string name="tv_available">Available</string>
+    <string name="tv_your_seat">Your Seat</string>
+    <string name="tv_1">1</string>
+    <string name="tv_a">A</string>
+    <string name="tv_b">B</string>
+    <string name="tv_2">2</string>
+    <string name="tv_3">3</string>
+    <string name="tv_4">4</string>
+    <string name="tv_5">5</string>
+
+    <!--    fragment_select_seat_kecil-->
+    <string name="select_your_seat">Select your Seat!</string>
+    <string name="bandung">Bandung</string>
+    <string name="jakarta">Jakarta</string>
+    <string name="_08th_des_2021_wednesday">08th - Des - 2021 | Wednesday</string>
+    <string name="mobil_kecil">Mobil Kecil</string>
+    <string name="a_c_sleeper_2_seats">A/C Sleeper (2 Seats)</string>
+    <string name="rp_180_000">Rp.180.000</string>
+    <string name="booked">Booked</string>
+    <string name="available">Available</string>
+    <string name="your_seat">Your Seat</string>
+    <string name="_1">1</string>
+    <string name="a">A</string>
+    <string name="b">B</string>
+    <string name="_2">2</string>
+    <string name="_3">3</string>
+
+    <!--    fragment_location_item-->
+    <string name="tv_bandung_location">Bandung</string>
+    <string name="tv_jalan_pasteur">Jalan Pasteur No. 16A</string>
+
+    <!--    fragment_book_now-->
+    <string name="tv_tujuan_perjalanan">Tujuan Perjalanan</string>
+    <string name="tv_asal_book">Asal</string>
+    <string name="tv_tujuan_book">Tujuan</string>
+    <string name="tv_tanggal_perjalanan">Tanggal Perjalanan</string>
+    <string name="tv_tanggal_berangkat">Tanggal Berangkat</string>
+    <string name="tv_waktu_berangkat">Waktu Berangkat</string>
+    <string name="tv_vehicle_type">Vehicle Type</string>
+    <string name="tv_booking_sekarang">Booking Sekarang</string>
+
+    <!--    fragment_profile-->
+    <string name="tv_profile">Profile</string>
+    <string name="tv_nama_pengguna">Nama Pengguna :</string>
+    <string name="tv_user">User</string>
+    <string name="tv_nama_id">Nama Id :</string>
+    <string name="tv_id_profile">id</string>
+    <string name="tv_total_poin">Total Poin :</string>
+    <string name="tv_400">400</string>
+    <string name="tv_logout">Logout</string>
+
+
 </resources>

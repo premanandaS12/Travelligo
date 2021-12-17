@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.tubesp3b.databinding.FragmentGopayBinding;
 
 public class GopayFragment extends Fragment implements View.OnClickListener {
@@ -38,6 +40,11 @@ public class GopayFragment extends Fragment implements View.OnClickListener {
         // Inflate the layout for this fragment
         binding = FragmentGopayBinding.inflate(inflater);
         View view = binding.getRoot();
+
+        Glide.with(this.activity)
+                .load("https://i.imgur.com/qpr5LR2.jpg")
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .into(this.binding.ivGopay);
 
         return view;
     }

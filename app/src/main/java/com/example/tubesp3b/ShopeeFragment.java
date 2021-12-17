@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.tubesp3b.databinding.FragmentShopeeBinding;
 
 public class ShopeeFragment extends Fragment implements View.OnClickListener {
@@ -38,6 +40,11 @@ public class ShopeeFragment extends Fragment implements View.OnClickListener {
         // Inflate the layout for this fragment
         binding = FragmentShopeeBinding.inflate(inflater);
         View view = binding.getRoot();
+
+        Glide.with(this.activity)
+                .load("https://www.freepnglogos.com/uploads/shopee-logo-png/shopee-logo-digital-economy-forum-mdcc-1.png")
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .into(this.binding.ivShopee);
 
         return view;
     }

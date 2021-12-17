@@ -61,14 +61,14 @@
                         android:src="@drawable/bus_image_3" />
 
                     <TextView
-                        android:id="@+id/textView"
+                        android:id="@+id/textView_selectseat"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="16dp"
                         android:fontFamily="@font/print_clearly"
-                        android:text="Select your Seat!"
+                        android:text="@string/tv_select_seat"
                         android:textAlignment="center"
                         android:textColor="#FFFFFF"
                         android:textSize="18sp" />
@@ -77,7 +77,7 @@
                         android:id="@+id/linearLayout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/textView"
+                        android:layout_below="@+id/textView_selectseat"
                         android:layout_marginTop="8dp"
                         android:orientation="horizontal"
                         android:weightSum="100">
@@ -87,7 +87,7 @@
                             android:layout_height="match_parent"
                             android:layout_weight="45"
                             android:fontFamily="@font/gotham"
-                            android:text="Bandung"
+                            android:text="@string/tv_bandung_seat"
                             android:textAlignment="center"
                             android:textColor="#FFFFFF"
                             android:textSize="18sp" />
@@ -97,14 +97,14 @@
                             android:layout_height="match_parent"
                             android:layout_gravity="center"
                             android:layout_weight="10"
-                            android:src="@drawable/ic_swap_horiz_white_24dp" />
+                            android:src="@drawable/ic_baseline_arrow_forward_24" />
 
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="45"
                             android:fontFamily="@font/gotham"
-                            android:text="Jakarta"
+                            android:text="@string/tv_jakarta_seat"
                             android:textAlignment="center"
                             android:textColor="#FFFFFF"
                             android:textSize="18sp" />
@@ -113,13 +113,13 @@
 
 
                     <TextView
-                        android:id="@+id/textView3"
+                        android:id="@+id/textView_hari"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/linearLayout"
                         android:layout_marginTop="8dp"
                         android:fontFamily="@font/print_clearly"
-                        android:text="08th - Des - 2021 | Wednesday"
+                        android:text="@string/tv_tanggal_seat"
                         android:textAlignment="center"
                         android:textColor="#FFFFFF"
                         android:textSize="18sp" />
@@ -128,7 +128,7 @@
                         android:id="@+id/cardView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/textView3"
+                        android:layout_below="@+id/textView_hari"
                         android:layout_marginLeft="8dp"
                         android:layout_marginTop="24dp"
                         android:layout_marginRight="8dp"
@@ -157,7 +157,7 @@
                                     android:layout_marginTop="4dp"
                                     android:layout_marginBottom="4dp"
                                     android:fontFamily="@font/calibri"
-                                    android:text="Mobil Besar"
+                                    android:text="@string/tv_mobilbesar"
                                     android:textColor="#4b4b4b"
                                     android:textStyle="bold" />
 
@@ -165,7 +165,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/calibri"
-                                    android:text="A/C Sleeper (2 Seats)"
+                                    android:text="@string/tv_acsleeper"
                                     android:textColor="#8a8a8a" />
 
                             </LinearLayout>
@@ -181,7 +181,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/calibri"
-                                    android:text="Rp.200.000"
+                                    android:text="@string/tv_hargaseat"
                                     android:textAlignment="textEnd"
                                     android:textColor="#f5a622"
                                     android:textSize="24sp"
@@ -235,7 +235,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/calibri"
-                                    android:text="Booked"
+                                    android:text="@string/tv_booked"
                                     android:textAlignment="center"
                                     android:textColor="#b2b2b2" />
 
@@ -258,7 +258,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/calibri"
-                                    android:text="Available"
+                                    android:text="@string/tv_available"
                                     android:textAlignment="center"
                                     android:textColor="#b2b2b2" />
                             </LinearLayout>
@@ -279,7 +279,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/calibri"
-                                    android:text="Your Seat"
+                                    android:text="@string/tv_your_seat"
                                     android:textAlignment="center"
                                     android:textColor="#b2b2b2" />
                             </LinearLayout>
@@ -305,7 +305,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginEnd="16dp"
                                     android:fontFamily="@font/print_clearly"
-                                    android:text="1"
+                                    android:text="@string/tv_1"
                                     android:textColor="#c3c3c3"
                                     android:textSize="18sp"
                                     android:textStyle="bold"
@@ -316,7 +316,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginEnd="4dp"
                                     android:fontFamily="@font/print_clearly"
-                                    android:text="A"
+                                    android:text="@string/tv_a"
                                     android:textAlignment="center"
                                     android:textColor="#c3c3c3"
                                     android:textSize="18sp"
@@ -327,7 +327,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="4dp"
                                     android:fontFamily="@font/print_clearly"
-                                    android:text="B"
+                                    android:text="@string/tv_b"
                                     android:textAlignment="center"
                                     android:textColor="#c3c3c3"
                                     android:textSize="18sp"
@@ -362,7 +362,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginEnd="16dp"
                                     android:fontFamily="@font/print_clearly"
-                                    android:text="1"
+                                    android:text="@string/tv_1"
                                     android:textColor="#c3c3c3"
                                     android:textSize="18sp"
                                     android:textStyle="bold" />
@@ -371,13 +371,15 @@
                                     android:layout_width="36dp"
                                     android:layout_height="36dp"
                                     android:layout_marginEnd="4dp"
-                                    android:src="@drawable/booked_img" />
+                                    android:src="@drawable/booked_img"
+                                    android:id="@+id/iv_seat1a"/>
 
                                 <ImageView
                                     android:layout_width="36dp"
                                     android:layout_height="36dp"
                                     android:layout_marginStart="4dp"
-                                    android:src="@drawable/available_img" />
+                                    android:src="@drawable/available_img"
+                                    android:id="@+id/iv_seat1b"/>
 
                             </LinearLayout>
 
@@ -408,7 +410,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginEnd="16dp"
                                     android:fontFamily="@font/print_clearly"
-                                    android:text="2"
+                                    android:text="@string/tv_2"
                                     android:textColor="#c3c3c3"
                                     android:textSize="18sp"
                                     android:textStyle="bold" />
@@ -417,13 +419,15 @@
                                     android:layout_width="36dp"
                                     android:layout_height="36dp"
                                     android:layout_marginEnd="4dp"
-                                    android:src="@drawable/available_img" />
+                                    android:src="@drawable/available_img"
+                                    android:id="@+id/iv_seat2a"/>
 
                                 <ImageView
                                     android:layout_width="36dp"
                                     android:layout_height="36dp"
                                     android:layout_marginStart="4dp"
-                                    android:src="@drawable/booked_img" />
+                                    android:src="@drawable/booked_img"
+                                    android:id="@+id/iv_seat2b"/>
 
                             </LinearLayout>
 
@@ -453,7 +457,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginEnd="16dp"
                                     android:fontFamily="@font/print_clearly"
-                                    android:text="3"
+                                    android:text="@string/tv_3"
                                     android:textColor="#c3c3c3"
                                     android:textSize="18sp"
                                     android:textStyle="bold" />
@@ -462,13 +466,15 @@
                                     android:layout_width="36dp"
                                     android:layout_height="36dp"
                                     android:layout_marginEnd="4dp"
-                                    android:src="@drawable/available_img" />
+                                    android:src="@drawable/available_img"
+                                    android:id="@+id/iv_seat3a"/>
 
                                 <ImageView
                                     android:layout_width="36dp"
                                     android:layout_height="36dp"
                                     android:layout_marginStart="4dp"
-                                    android:src="@drawable/available_img" />
+                                    android:src="@drawable/available_img"
+                                    android:id="@+id/iv_seat3b"/>
 
                             </LinearLayout>
 
@@ -498,7 +504,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginEnd="16dp"
                                     android:fontFamily="@font/print_clearly"
-                                    android:text="4"
+                                    android:text="@string/tv_4"
                                     android:textColor="#c3c3c3"
                                     android:textSize="18sp"
                                     android:textStyle="bold" />
@@ -507,13 +513,15 @@
                                     android:layout_width="36dp"
                                     android:layout_height="36dp"
                                     android:layout_marginEnd="4dp"
-                                    android:src="@drawable/available_img" />
+                                    android:src="@drawable/available_img"
+                                    android:id="@+id/iv_seat4a"/>
 
                                 <ImageView
                                     android:layout_width="36dp"
                                     android:layout_height="36dp"
                                     android:layout_marginStart="4dp"
-                                    android:src="@drawable/booked_img" />
+                                    android:src="@drawable/booked_img"
+                                    android:id="@+id/iv_seat4b"/>
 
                             </LinearLayout>
 
@@ -543,7 +551,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginEnd="16dp"
                                     android:fontFamily="@font/print_clearly"
-                                    android:text="5"
+                                    android:text="@string/tv_5"
                                     android:textColor="#c3c3c3"
                                     android:textSize="18sp"
                                     android:textStyle="bold" />
@@ -552,13 +560,15 @@
                                     android:layout_width="36dp"
                                     android:layout_height="36dp"
                                     android:layout_marginEnd="4dp"
-                                    android:src="@drawable/booked_img" />
+                                    android:src="@drawable/booked_img"
+                                    android:id="@+id/iv_seat5a"/>
 
                                 <ImageView
                                     android:layout_width="36dp"
                                     android:layout_height="36dp"
                                     android:layout_marginStart="4dp"
-                                    android:src="@drawable/booked_img" />
+                                    android:src="@drawable/booked_img"
+                                    android:id="@+id/iv_seat5b"/>
 
                             </LinearLayout>
 

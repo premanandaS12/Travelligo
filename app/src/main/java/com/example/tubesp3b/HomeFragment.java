@@ -60,17 +60,17 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             args.putInt("page",6);
             this.getParentFragmentManager().setFragmentResult("changePage",args);
         }else if(view==this.binding.gopayPromos){
-//            Bundle args = new Bundle();
-//            args.putInt("page",2);
-//            this.getParentFragmentManager().setFragmentResult("changePage",args);
+            Bundle args = new Bundle();
+            args.putInt("page",7);
+            this.getParentFragmentManager().setFragmentResult("changePage",args);
         }else if(view==this.binding.ovoPromos){
-//            Bundle args = new Bundle();
-//            args.putInt("page",2);
-//            this.getParentFragmentManager().setFragmentResult("changePage",args);
+            Bundle args = new Bundle();
+            args.putInt("page",8);
+            this.getParentFragmentManager().setFragmentResult("changePage",args);
         }else if(view==this.binding.shopeepayPromos){
-//            Bundle args = new Bundle();
-//            args.putInt("page",2);
-//            this.getParentFragmentManager().setFragmentResult("changePage",args);
+            Bundle args = new Bundle();
+            args.putInt("page",9);
+            this.getParentFragmentManager().setFragmentResult("changePage",args);
         }else if(view==this.binding.btnTelp){
 
         }else if(view==this.binding.btnWa){
