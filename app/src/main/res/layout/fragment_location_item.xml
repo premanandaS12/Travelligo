@@ -3,15 +3,60 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:id="@+id/location_item"
-    android:background="@color/main_font_color">
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    >
 
-    <TextView
-        android:id="@+id/alamat"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:drawableLeft="@drawable/ic_location"
-        android:text="@string/bandung_jalan_dipatiukur_no_62"
-        android:textSize="20sp"/>
+        android:background="@drawable/rounded_item"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:id="@+id/location_item"
+        android:orientation="vertical">
+        <TextView
+            android:fontFamily="@font/gotham"
+            android:id="@+id/city_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bandung"
+            android:layout_marginLeft="20dp"
+            android:textSize="20sp"
+            android:layout_marginBottom="10sp"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".1"
+                android:src="@drawable/ic_location_24"
+                android:layout_marginLeft="20dp"/>
+
+            <TextView
+                android:fontFamily="@font/gotham"
+                android:id="@+id/address_location"
+                android:layout_width="0dp"
+                android:layout_weight=".9"
+                android:layout_height="wrap_content"
+                android:text="Jalan Pasteur No. 16A"
+                android:layout_marginLeft="20dp"
+                android:textSize="20sp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="10dp"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+
 
 </LinearLayout>

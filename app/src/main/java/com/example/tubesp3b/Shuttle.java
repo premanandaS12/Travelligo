@@ -1,17 +1,27 @@
 package com.example.tubesp3b;
 
 public class Shuttle {
-    private String location;
+    private String city;
+    private String address;
 
-    public Shuttle(String location){
-        this.location = location;
+    public Shuttle(String address, String city){
+        this.address = address;
+        this.city = city;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public String getLocation() {
-        return location;
+    public String getAddress() {
+        return address;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
     }
 }

@@ -23,6 +23,8 @@ import com.example.tubesp3b.databinding.ActivityMainBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener, IMainActivity{
     private ActivityMainBinding binding;
     FragmentManager fragmentManager;
@@ -39,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     private BookNowFragment booking;
     private MyBookingHistoryFragment bookingHist;
     private ProfileFragment profile;
+    private LocationFragment location;
 
     @SuppressLint("ResourceAsColor")
     @Override
@@ -69,6 +72,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         this.booking = BookNowFragment.newInstance(this,this);
 //        this.bookingHist = MyBookingHistoryFragment.newInstance(this,this);
         this.profile = ProfileFragment.newInstance(this,this);
+        this.location = LocationFragment.newInstance(this,this);
 
         if(this.mainPresenter.isLogin()==true){
             changePage(1);
@@ -137,8 +141,42 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         }else if(page==5){
             ft.replace(R.id.fragmentContainerView, this.profile).addToBackStack(null);
             this.binding.bottomNavigationView.setVisibility(View.VISIBLE);
+        }else if(page==6){
+            Log.d("halaman","6");
+            ft.replace(R.id.fragmentContainerView, this.location).addToBackStack(null);
+            this.binding.bottomNavigationView.setVisibility(View.VISIBLE);
         }
         ft.commit();
+    }
+
+    @Override
+    public void updateAsal(List<String> asal) {
+
+    }
+
+    @Override
+    public void updateTujuan(List<String> tujuan) {
+
+    }
+
+    @Override
+    public void updateJamBerangkat(List<String> jam) {
+
+    }
+
+    @Override
+    public void updateVehicle(List<String> vehicleType) {
+
+    }
+
+    @Override
+    public void ruteDipilih(Payload payload) {
+
+    }
+
+    @Override
+    public void updatePoolLocation(List<Shuttle> poolLocation) {
+
     }
 
     @Override

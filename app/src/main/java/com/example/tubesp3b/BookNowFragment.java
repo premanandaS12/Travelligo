@@ -18,6 +18,7 @@ import android.widget.DatePicker;
 import com.example.tubesp3b.databinding.FragmentBookNowBinding;
 import com.example.tubesp3b.databinding.FragmentHomeBinding;
 
+import java.security.PrivateKey;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -29,10 +30,18 @@ public class BookNowFragment extends Fragment implements View.OnClickListener, I
     private MainPresenter mainPresenter;
     private FragmentBookNowBinding binding;
     private DatePickerDialog.OnDateSetListener dateListener;
+    private List<String> asal;
+    private List<String> tujuan;
+    private List<String> jam;
+    private List<String> vehicleType;
 
     public BookNowFragment(MainActivity activity, Context context) {
         this.activity = activity;
         this.context = context;
+        this.asal = new ArrayList<>();
+        this.tujuan = new ArrayList<>();
+        this.jam = new ArrayList<>();
+        this.vehicleType = new ArrayList<>();
     }
 
     public static BookNowFragment newInstance(MainActivity activity, Context context) {
@@ -46,6 +55,9 @@ public class BookNowFragment extends Fragment implements View.OnClickListener, I
         this.binding = FragmentBookNowBinding.inflate(inflater,container,false);
         this.mainPresenter = new MainPresenter(this, activity, context);
 
+        this.mainPresenter.getRoutes();
+
+
         this.binding.tanggalBerangkat.setOnClickListener(this);
 
         dateListener = new DatePickerDialog.OnDateSetListener() {
@@ -58,18 +70,24 @@ public class BookNowFragment extends Fragment implements View.OnClickListener, I
         };
 
 //        Spinner
-        String[] kotaAsal = new String[]{"Jakarta, Bandung, Bekasi"};
-        List<String> kota = new ArrayList<String>();
-        kota.add("Jakarta");
-        kota.add("Bandung");
-        kota.add("Bekasi");
+//        Set adapter
+        ArrayAdapter<String> adapterAsal= new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item, this.asal);
+        ArrayAdapter<String> adapterTujuan= new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item, this.tujuan);
+        ArrayAdapter<String> adapterJam = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item, this.jam);
+        ArrayAdapter<String> adapterVehicle = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item, this.vehicleType);
 
-        ArrayAdapter<String> adapterAsal= new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item, kota);
-        ArrayAdapter<String> adapterTujuan= new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item, kota);
         adapterAsal.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         adapterTujuan.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapterJam.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapterVehicle.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
         this.binding.asal.setAdapter(adapterAsal);
-        this.binding.tujuan.setAdapter(adapterAsal);
+        this.binding.tujuan.setAdapter(adapterTujuan);
+        this.binding.waktuBerangkat.setAdapter(adapterJam);
+        this.binding.vehicleType.setAdapter(adapterVehicle);
+
+        this.binding.book.setOnClickListener(this);
+
         return this.binding.getRoot();
     }
 
@@ -84,6 +102,8 @@ public class BookNowFragment extends Fragment implements View.OnClickListener, I
             DatePickerDialog d = new DatePickerDialog(context, android.R.style.Theme_Holo_Light_Dialog_MinWidth, dateListener, tahun, bulan, tanggal);
             d.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             d.show();
+        }else if(view==this.binding.book){
+
         }
     }
 
@@ -94,6 +114,41 @@ public class BookNowFragment extends Fragment implements View.OnClickListener, I
 
     @Override
     public void changePage(int page) {
+//        Masuk halaman pilih seat
+
+//        Bundle args = new Bundle();
+//        args.putInt("page",);
+//        this.getParentFragmentManager().setFragmentResult("changePage",args);
+    }
+
+    @Override
+    public void updateAsal(List<String> asal) {
+        this.asal = asal;
+    }
+
+    @Override
+    public void updateTujuan(List<String> tujuan) {
+        this.tujuan = tujuan;
+    }
+
+    @Override
+    public void updateJamBerangkat(List<String> jam) {
+        this.jam = jam;
+    }
+
+    @Override
+    public void updateVehicle(List<String> vehicleType) {
+        this.vehicleType = vehicleType;
+    }
+
+    @Override
+    public void ruteDipilih(Payload payload) {
 
     }
+
+    @Override
+    public void updatePoolLocation(List<Shuttle> poolLocation) {
+
+    }
+
 }

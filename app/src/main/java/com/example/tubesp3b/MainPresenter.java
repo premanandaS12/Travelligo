@@ -20,6 +20,8 @@ import org.json.JSONObject;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -49,6 +51,12 @@ public class MainPresenter {
     private TravelCourses currentCourse;
     private List<TravelOrderHist> orderHist;
     private DbHelper dbHelper;
+    private Order order;
+    private List<String> asal;
+    private List<String> tujuan;
+    private List<String> jam;
+    private List<String> vehicleType;
+    private List<Shuttle> poolLocation;
 
     public MainPresenter(IMainActivity view, MainActivity activity, Context context){
         this.ui = view;
@@ -59,20 +67,36 @@ public class MainPresenter {
         this.rute = new ArrayList<Payload>();
         this.orderHist = new ArrayList<TravelOrderHist>();
         this.dbHelper = new DbHelper(context);
+        this.tujuan = new ArrayList<>();
+        this.asal = new ArrayList<>();
+        this.jam = new ArrayList<>(Arrays.asList("00","01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"));
+        this.vehicleType = new ArrayList<>(Arrays.asList("Small", "Large"));
+        this.poolLocation = new ArrayList<>();
     }
 
     public void authenticateLogin(String username, String password){
         Log.d("login","msk login");
         User user = new User(username,password);
         String json = gson.toJson(user);
+        this.dbHelper.addUername(username);
         try {
             JSONObject jsonObject = new JSONObject(json);
             JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, BASE_URL + AUTHENTICATE, jsonObject, new Response.Listener<JSONObject>() {
                 @Override
                 public void onResponse(JSONObject response) {
                     String resp = response.toString();
-                    LoginMessage loginMessage = gson.fromJson(resp,LoginMessage.class);
-                    setLoginMessage(loginMessage);
+                    try {
+                        if(null!=resp){
+                            LoginMessage loginMessage = gson.fromJson(resp,LoginMessage.class);
+                            setLoginMessage(loginMessage);
+                        }else{
+                            String err = response.getString("errcode");
+                            toastMessage(err);
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
                 }
             }, new Response.ErrorListener() {
                 @Override
@@ -99,6 +123,7 @@ public class MainPresenter {
             @Override
             public void onResponse(JSONObject response) {
                 try {
+                    Log.d("route", response.toString());
                     JSONArray arr = response.getJSONArray("payload");
                     for(int i=0;i<arr.length();i++){
                         JSONObject payload = arr.getJSONObject(i);
@@ -106,6 +131,9 @@ public class MainPresenter {
                         Payload currPayload = gson.fromJson(temp,Payload.class);
                         addPayload(currPayload);
                     }
+                    updateListAsalTujuan();
+                    updateJam();
+                    updateVehicleType();
                 } catch (JSONException e) {
                     e.printStackTrace();
 
@@ -119,8 +147,9 @@ public class MainPresenter {
         }){
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
+                String token = getTokenFromDb();
                 Map<String,String> headers= new HashMap<String,String>();
-                headers.put("Authorization", "Bearer "+loginMessage.getToken());
+                headers.put("Authorization", "Bearer "+ token);
                 return headers;
 //                return super.getHeaders();
             }
@@ -214,14 +243,36 @@ public class MainPresenter {
             JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, BASE_URL + GET_ORDER, jsonObject, new Response.Listener<JSONObject>() {
                 @Override
                 public void onResponse(JSONObject response) {
-                    String resp = response.toString();
-                    LoginMessage loginMessage = gson.fromJson(resp,LoginMessage.class);
-                    setLoginMessage(loginMessage);
+                    String msg="";
+                    try {
+                        msg = response.getString("message");
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                    if(msg=="Order submitted"){
+                        JSONArray arr = null;
+                        try {
+                            arr = response.getJSONArray("payload");
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        for(int i=0;i<arr.length();i++){
+                            JSONObject payload = null;
+                            try {
+                                payload = arr.getJSONObject(i);
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                            String temp = payload.toString();
+                            Order currOrder= gson.fromJson(temp, Order.class);
+                            addTempOrder(currOrder);
+                        }
+                    }
                 }
             }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
-                    toastMessage("Failed to login.");
+                    toastMessage("Failed to order.");
                 }
             });
             requestQueue.add(jsonObjectRequest);
@@ -258,8 +309,68 @@ public class MainPresenter {
         }
     }
 
+    public String getTokenFromDb(){
+        Log.d("token", this.dbHelper.getToken());
+        String token = this.dbHelper.getToken();
+        return token;
+//        this.loginMessage.setToken(this.dbHelper.getToken());
+    }
+
+    public void addTempOrder(Order currOrder){
+        this.order = currOrder;
+    }
 
 
+    public void updateListAsalTujuan(){
+        for(int i=0;i<this.rute.size()-1;i++){
+            if(!this.asal.contains(this.rute.get(i).getSource())){
+                this.asal.add(this.rute.get(i).getSource());
+            }
+        }
+        for(int i=0;i<this.rute.size()-1;i++){
+            if(!this.tujuan.contains(this.rute.get(i).getDestination())){
+                this.tujuan.add(this.rute.get(i).getDestination());
+            }
+        }
+        Collections.sort(this.asal);
+        Collections.sort(this.tujuan);
 
+        this.ui.updateAsal(this.asal);
+        this.ui.updateTujuan(this.tujuan);
+
+        Log.d("asal",this.asal.toString());
+        Log.d("tujuan",this.tujuan.toString());
+    }
+
+    public void updateJam(){
+        this.ui.updateJamBerangkat(this.jam);
+    }
+
+    public void updateVehicleType(){
+        this.ui.updateVehicle(this.vehicleType);
+    }
+
+    public void getObjPesanan(String source, String destination){
+        for(int i=0;i<this.rute.size();i++){
+            if(this.rute.get(i).getSource()==source && this.rute.get(i).getDestination()== destination){
+                this.ui.ruteDipilih(this.rute.get(i));
+            }else{
+                this.toastMessage("Invalid destination.");
+            }
+        }
+    }
+
+    public void getLocation(){
+        Shuttle shuttlelocBdg = new Shuttle("Jalan Pasteur No. 16A","Bandung");
+        Shuttle shuttleLocJkt = new Shuttle("Jalan Pademangan Indah 5 No. 12","Jakarta");
+        Shuttle shuttleLocBek = new Shuttle("Jalan Pangeran Diponegoro No. 19F","Bekasi");
+        Shuttle shuttleLocCik = new Shuttle("Jalan Mataram No. 39A","Cikarang");
+        this.poolLocation.add(shuttlelocBdg);
+        this.poolLocation.add(shuttleLocJkt);
+        this.poolLocation.add(shuttleLocBek);
+        this.poolLocation.add(shuttleLocCik);
+        Log.d("di mp",this.poolLocation.toString());
+        this.ui.updatePoolLocation(this.poolLocation);
+    }
 
 }

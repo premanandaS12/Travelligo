@@ -13,6 +13,8 @@ import android.widget.Toast;
 import com.example.tubesp3b.databinding.FragmentLoginBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.List;
+
 public class LoginFragment extends Fragment implements View.OnClickListener, IMainActivity {
     private FragmentLoginBinding binding;
     private MainActivity activity;
@@ -64,5 +66,35 @@ public class LoginFragment extends Fragment implements View.OnClickListener, IMa
         Bundle args = new Bundle();
         args.putInt("page",page);
         this.getParentFragmentManager().setFragmentResult("changePage",args);
+    }
+
+    @Override
+    public void updateAsal(List<String> asal) {
+
+    }
+
+    @Override
+    public void updateTujuan(List<String> tujuan) {
+
+    }
+
+    @Override
+    public void updateJamBerangkat(List<String> jam) {
+
+    }
+
+    @Override
+    public void updateVehicle(List<String> vehicleType) {
+
+    }
+
+    @Override
+    public void ruteDipilih(Payload payload) {
+
+    }
+
+    @Override
+    public void updatePoolLocation(List<Shuttle> poolLocation) {
+
     }
 }

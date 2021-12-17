@@ -9,7 +9,9 @@
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/list_book_history"
-        android:backgroundTint="@color/main_font_color"/>
+        android:id="@+id/list_location"
+        android:backgroundTint="@color/main_font_color"
+        android:divider="#00000000"
+        />
 
 </FrameLayout>

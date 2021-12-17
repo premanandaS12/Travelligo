@@ -16,6 +16,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
     private static final String TABLE_TOKEN = "token_table";
     private static final String COL1_TOKEN = "token";
+    private static final String COL2_USERNAME = "username";
 
     public DbHelper(Context context) {
         super(context, DB_NAME, null, 1);
@@ -24,7 +25,7 @@ public class DbHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         this.db = sqLiteDatabase;
-        String createTableFilm = "CREATE TABLE " + TABLE_TOKEN + "(ID INTEGER PRIMARY KEY AUTOINCREMENT, "+ COL1_TOKEN + " TEXT)";
+        String createTableFilm = "CREATE TABLE " + TABLE_TOKEN + "(ID INTEGER PRIMARY KEY AUTOINCREMENT, "+ COL1_TOKEN + " TEXT, "+ COL2_USERNAME +" TEXT )";
         db.execSQL(createTableFilm);
     }
 
@@ -64,8 +65,43 @@ public class DbHelper extends SQLiteOpenHelper {
         Cursor res = db.rawQuery("SELECT * FROM "+TABLE_TOKEN,null);
         String temp = null;
         while(res.moveToNext()){
-            temp = res.getString(0);
+            temp = res.getString(1);
         }
         return temp;
     }
+
+    public boolean addUername(String username){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(COL2_USERNAME, username);
+
+        long res = db.insert(TABLE_TOKEN, null, cv);
+
+        if(res==-1){
+            return false;
+        }else{
+            return true;
+        }
+    }
+
+    public boolean deleteUsername(String username){
+        SQLiteDatabase db = this.getWritableDatabase();
+        long res = db.delete(TABLE_TOKEN, "username=?",new String[]{ username });
+        if (res == -1) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public String getUsername(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res = db.rawQuery("SELECT * FROM "+TABLE_TOKEN,null);
+        String temp = null;
+        while(res.moveToNext()){
+            temp = res.getString(2);
+        }
+        return temp;
+    }
+
 }
