@@ -42,7 +42,7 @@ public class GopayFragment extends Fragment implements View.OnClickListener {
         View view = binding.getRoot();
 
         Glide.with(this.activity)
-                .load("https://i.imgur.com/qpr5LR2.jpg")
+                .load("https://1000logos.net/wp-content/uploads/2021/05/GoPay-Logo.png")
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(this.binding.ivGopay);
 

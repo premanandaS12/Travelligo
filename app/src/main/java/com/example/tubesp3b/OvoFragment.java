@@ -42,7 +42,7 @@ public class OvoFragment extends Fragment implements View.OnClickListener {
         View view = binding.getRoot();
 
         Glide.with(this.activity)
-                .load("https://commons.wikimedia.org/wiki/File:Logo_ovo_purple.svg#/media/File:Logo_ovo_purple.svg")
+                .load("https://1.bp.blogspot.com/-zqvCZXYnnfA/XciTU6Ikw_I/AAAAAAAABJc/TrUNMleviBsRtXgnDWzFEhZjxN03ET7_gCLcBGAsYHQ/s1600/Logo%2BOVO.png")
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(this.binding.ivOvo);
 
