@@ -14,7 +14,6 @@ import com.example.tubesp3b.databinding.FragmentLocationBinding;
 
 import java.util.List;
 
-
 public class LocationFragment extends Fragment implements IMainActivity {
     private MainActivity activity;
     private Context context;

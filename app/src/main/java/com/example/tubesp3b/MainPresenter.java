@@ -152,9 +152,6 @@ public class MainPresenter {
     }
 
 
-    //cek apakah hour beneran int ato time takutnya salah
-    //date juga takut salah klo tipe nya date
-    //klo g jalan coba pake try catch si throws exceptionnya
     public void getCourses(String source, String destination, String vehicleType, String date, String hour) {
         Uri uri = Uri.parse(BASE_URL + COURSES).buildUpon().appendQueryParameter(SOURCE, source)
                 .appendQueryParameter(DESTINATION, destination)
@@ -198,13 +195,12 @@ public class MainPresenter {
                 Map<String,String> headers= new HashMap<String,String>();
                 headers.put("Authorization", "Bearer "+getTokenFromDb());
                 return headers;
-//                return super.getHeaders();
             }
         };
 
         requestQueue.add(jsonObjectRequest);
     }
-//klo g jalan coba pake try catch si throws exceptionnya
+
     public void getTravelOrderHist(int limit, int offset) throws MalformedURLException {
         Uri uri = Uri.parse(BASE_URL + ORDERS).buildUpon().appendQueryParameter(LIMIT, String.valueOf(limit)).appendQueryParameter(OFFSET, String.valueOf(offset)).build();
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, uri.toString(), null, new Response.Listener<JSONObject>() {
@@ -236,7 +232,6 @@ public class MainPresenter {
                 Map<String,String> headers= new HashMap<String,String>();
                 headers.put("Authorization", "Bearer "+getTokenFromDb());
                 return headers;
-//                return super.getHeaders();
             }
         };
         requestQueue.add(jsonObjectRequest);
@@ -286,7 +281,6 @@ public class MainPresenter {
                 Map<String,String> headers= new HashMap<String,String>();
                 headers.put("Authorization", "Bearer "+getTokenFromDb());
                 return headers;
-//                return super.getHeaders();
             }
         };
         requestQueue.add(jsonObjectRequest);

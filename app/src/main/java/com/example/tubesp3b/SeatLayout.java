@@ -61,7 +61,6 @@ public class SeatLayout extends Fragment implements View.OnTouchListener, IMainA
                 int fee = result.getInt("fee");
 
                 updateUi(booked,dipencet,courseId,source,destination,dateTime,fee);
-//                sendToBayar(booked,dipencet,courseId,source,destination,dateTime,fee);
 
             }
         });

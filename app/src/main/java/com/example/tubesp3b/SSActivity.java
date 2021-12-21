@@ -12,7 +12,6 @@ public class SSActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_splash);
-//        getSupportActionBar().hide();
 
         final Handler handler =new Handler();
         handler.postDelayed(new Runnable() {

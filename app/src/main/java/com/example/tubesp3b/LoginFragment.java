@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.example.tubesp3b.databinding.FragmentLoginBinding;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.List;
 
@@ -38,7 +37,6 @@ public class LoginFragment extends Fragment implements View.OnClickListener, IMa
         this.presenter = new MainPresenter(this,activity,context);
         this.binding.btnSignIn.setOnClickListener(this);
 
-//        getActivity().getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
         return this.binding.getRoot();
     }
 

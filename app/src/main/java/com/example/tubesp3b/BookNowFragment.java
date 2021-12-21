@@ -73,8 +73,6 @@ public class BookNowFragment extends Fragment implements View.OnClickListener, I
             }
         };
 
-//        Spinner
-//        Set adapter
         ArrayAdapter<String> adapterAsal= new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item, this.asal);
         ArrayAdapter<String> adapterTujuan= new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item, this.tujuan);
         ArrayAdapter<String> adapterJam = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item, this.jam);
@@ -154,11 +152,6 @@ public class BookNowFragment extends Fragment implements View.OnClickListener, I
             d.show();
         }else if(view==this.binding.book){
             this.mainPresenter.getCourses(this.kotaAsal,this.kotaTujuan,this.jenisMobil,this.date, this.waktuKeberangkatan);
-//            try {
-//
-//            } catch (MalformedURLException e) {
-//                e.printStackTrace();
-//            }
 
         }
     }
