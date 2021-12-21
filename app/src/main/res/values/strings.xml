@@ -105,7 +105,7 @@
     <string name="tv_jakarta_seat">Jakarta</string>
     <string name="tv_tanggal_seat">08th - Des - 2021 | Wednesday</string>
     <string name="tv_mobilbesar">Mobil Besar</string>
-    <string name="tv_acsleeper">A/C Sleeper (2 Seats)</string>
+    <string name="tv_acsleeper">A/C</string>
     <string name="tv_hargaseat">Rp.200.000</string>
     <string name="tv_booked">Booked</string>
     <string name="tv_available">Available</string>
@@ -124,7 +124,7 @@
     <string name="jakarta">Jakarta</string>
     <string name="_08th_des_2021_wednesday">08th - Des - 2021 | Wednesday</string>
     <string name="mobil_kecil">Mobil Kecil</string>
-    <string name="a_c_sleeper_2_seats">A/C Sleeper (2 Seats)</string>
+    <string name="a_c_sleeper_2_seats">A/C</string>
     <string name="rp_180_000">Rp.180.000</string>
     <string name="booked">Booked</string>
     <string name="available">Available</string>
@@ -151,13 +151,14 @@
 
     <!--    fragment_profile-->
     <string name="tv_profile">Profile</string>
-    <string name="tv_nama_pengguna">Nama Pengguna :</string>
+    <string name="tv_nama_pengguna">Nama Pengguna </string>
     <string name="tv_user">User</string>
     <string name="tv_nama_id">Nama Id :</string>
     <string name="tv_id_profile">id</string>
     <string name="tv_total_poin">Total Poin :</string>
     <string name="tv_400">400</string>
     <string name="tv_logout">Logout</string>
+    <string name="vehicle_type">Vehicle Type</string>
 
 
 </resources>

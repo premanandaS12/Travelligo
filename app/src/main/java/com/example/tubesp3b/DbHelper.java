@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.CpuUsageInfo;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 
@@ -17,6 +18,8 @@ public class DbHelper extends SQLiteOpenHelper {
     private static final String TABLE_TOKEN = "token_table";
     private static final String COL1_TOKEN = "token";
     private static final String COL2_USERNAME = "username";
+    private static final String COL3_JUMLAHORDER = "jumlah_order";
+    private static final String COL4_JUMLAHPOINT = "jumlah_point";
 
     public DbHelper(Context context) {
         super(context, DB_NAME, null, 1);
@@ -25,7 +28,7 @@ public class DbHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         this.db = sqLiteDatabase;
-        String createTableFilm = "CREATE TABLE " + TABLE_TOKEN + "(ID INTEGER PRIMARY KEY AUTOINCREMENT, "+ COL1_TOKEN + " TEXT, "+ COL2_USERNAME +" TEXT )";
+        String createTableFilm = "CREATE TABLE " + TABLE_TOKEN + "(ID INTEGER PRIMARY KEY AUTOINCREMENT, "+ COL1_TOKEN + " TEXT, "+ COL2_USERNAME +" TEXT, "+COL3_JUMLAHORDER+" INTEGER, "+COL4_JUMLAHPOINT+" INTEGER)";
         db.execSQL(createTableFilm);
     }
 
@@ -36,10 +39,13 @@ public class DbHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean addToken(String token){
+    public boolean addUser(String token, String username, int jumlahOrder, int jumlahPoint){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put(COL1_TOKEN, token);
+        cv.put(COL2_USERNAME, username);
+        cv.put(COL3_JUMLAHORDER,jumlahOrder);
+        cv.put(COL4_JUMLAHPOINT,jumlahPoint);
 
         long res = db.insert(TABLE_TOKEN, null, cv);
 
@@ -70,20 +76,6 @@ public class DbHelper extends SQLiteOpenHelper {
         return temp;
     }
 
-    public boolean addUername(String username){
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues cv = new ContentValues();
-        cv.put(COL2_USERNAME, username);
-
-        long res = db.insert(TABLE_TOKEN, null, cv);
-
-        if(res==-1){
-            return false;
-        }else{
-            return true;
-        }
-    }
-
     public boolean deleteUsername(String username){
         SQLiteDatabase db = this.getWritableDatabase();
         long res = db.delete(TABLE_TOKEN, "username=?",new String[]{ username });
@@ -96,7 +88,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
     public String getUsername(){
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor res = db.rawQuery("SELECT * FROM "+TABLE_TOKEN,null);
+        Cursor res = db.rawQuery("SELECT *  FROM "+TABLE_TOKEN,null);
         String temp = null;
         while(res.moveToNext()){
             temp = res.getString(2);
@@ -104,4 +96,41 @@ public class DbHelper extends SQLiteOpenHelper {
         return temp;
     }
 
-}
+    public int getJumlahPoint(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res = db.rawQuery("SELECT *  FROM "+TABLE_TOKEN,null);
+        int temp=0;
+        while(res.moveToNext()){
+            temp = res.getInt(4);
+        }
+        return temp;
+    }
+
+    public int getJumlahOrder(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res = db.rawQuery("SELECT *  FROM "+TABLE_TOKEN,null);
+        int temp=0;
+        while(res.moveToNext()){
+            temp = res.getInt(3);
+        }
+        return temp;
+    }
+
+    public boolean updatePoinAndOrder(int jumlahOrder, int jumlahPoint, String token){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(COL3_JUMLAHORDER, jumlahOrder);
+        cv.put(COL4_JUMLAHPOINT, jumlahPoint);
+
+        long res = db.update(TABLE_TOKEN, cv, "token=?", new String[]{ token });
+
+        if (res == -1) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    }
+
+

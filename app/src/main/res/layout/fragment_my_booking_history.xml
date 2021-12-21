@@ -10,6 +10,7 @@
         android:layout_height="match_parent"
         android:id="@+id/list_book_history"
         android:divider="#00000000"
-        android:backgroundTint="@color/main_font_color"/>
+        android:backgroundTint="@color/main_font_color"
+        android:layout_marginBottom="50dp"/>
 
 </FrameLayout>

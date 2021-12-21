@@ -5,139 +5,108 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ProfileFragment">
-    <RelativeLayout
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/white">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/tbProfile"
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@drawable/bg_home_wave"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:src="@drawable/ic_arrow_back_white_24dp" />
-
-            </RelativeLayout>
-
-        </androidx.appcompat.widget.Toolbar>
-
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/tbProfile">
-
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="3dp"
+            app:strokeColor="@color/blue_theme_secondary"
+            app:strokeWidth="2dp">
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <com.google.android.material.card.MaterialCardView
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="3dp"
-                    app:strokeColor="@color/blue_theme_secondary"
-                    app:strokeWidth="2dp">
+                    android:gravity="center"
+                    android:text="@string/tv_profile"
+                    android:textColor="@color/blue_theme_secondary"
+                    android:textSize="19sp"
+                    android:textStyle="bold" />
 
-                    <RelativeLayout
-                        android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="1"
+                    android:id="@+id/keterangan_nama"
+                    android:orientation="horizontal"
+                    >
+
+                    <TextView
+                        android:layout_marginLeft="20dp"
+                        android:layout_width="0dp"
+                        android:layout_weight=".5"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp">
+                        android:layout_marginTop="20dp"
+                        android:text="@string/tv_nama_pengguna"
+                        android:textColor="@android:color/black"
+                        android:textSize="17sp" />
 
-                        <TextView
-                            android:id="@+id/idSewa"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="@string/tv_profile"
-                            android:textColor="@color/blue_theme_secondary"
-                            android:textSize="19sp"
-                            android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/tv_nama"
+                        android:layout_width="0dp"
+                        android:layout_weight=".5"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="17sp"
+                        android:layout_marginRight="20dp"/>
 
-                        <TextView
-                            android:id="@+id/txtName"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/idSewa"
-                            android:layout_marginTop="20dp"
-                            android:text="@string/tv_nama_pengguna"
-                            android:textColor="@android:color/black"
-                            android:textSize="17sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="1"
+                    android:id="@+id/keterangan"
+                    android:orientation="horizontal"
+                    >
 
-                        <TextView
-                            android:id="@+id/lblName"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/txtName"
-                            android:text="@string/tv_user"
-                            android:textSize="16sp" />
+                    <TextView
+                        android:layout_marginLeft="20dp"
+                        android:layout_width="0dp"
+                        android:layout_weight=".5"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Point"
+                        android:textColor="@android:color/black"
+                        android:textSize="17sp" />
 
-                        <TextView
-                            android:id="@+id/txtId"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/lblName"
-                            android:layout_marginTop="20dp"
-                            android:text="@string/tv_nama_id"
-                            android:textColor="@android:color/black"
-                            android:textSize="17sp" />
+                    <TextView
+                        android:id="@+id/tv_point"
+                        android:layout_width="0dp"
+                        android:layout_weight=".5"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="17sp"
+                        android:layout_marginRight="20dp"/>
 
-                        <TextView
-                            android:id="@+id/lblId"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/txtId"
-                            android:text="@string/tv_id_profile"
-                            android:textSize="16sp" />
+                </LinearLayout>
 
-                        <TextView
-                            android:id="@+id/txtPoin"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/lblId"
-                            android:layout_marginTop="20dp"
-                            android:text="@string/tv_total_poin"
-                            android:textColor="@android:color/black"
-                            android:textSize="17sp" />
-
-                        <TextView
-                            android:id="@+id/lblEmail"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/txtPoin"
-                            android:text="@string/tv_400"
-                            android:textSize="16sp" />
-
-                        <Button
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/txtPoin"
-                            android:layout_centerInParent="true"
-                            android:layout_marginTop="20sp"
-                            android:text="@string/tv_logout" />
-
-
-                    </RelativeLayout>
-
-                </com.google.android.material.card.MaterialCardView>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/keterangan"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="20sp"
+                    android:text="@string/tv_logout"
+                    android:id="@+id/btn_logout"
+                    android:layout_gravity="center_horizontal"/>
 
             </LinearLayout>
 
-        </ScrollView>
 
-    </RelativeLayout>
 
+
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
 </FrameLayout>

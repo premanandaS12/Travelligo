@@ -48,10 +48,9 @@ public class MainPresenter {
     private RequestQueue requestQueue;
     private LoginMessage loginMessage;
     private List<Payload> rute;
-    private TravelCourses currentCourse;
+    private List<TravelCourses> currentCourse;
     private List<TravelOrderHist> orderHist;
     private DbHelper dbHelper;
-    private Order order;
     private List<String> asal;
     private List<String> tujuan;
     private List<String> jam;
@@ -72,13 +71,13 @@ public class MainPresenter {
         this.jam = new ArrayList<>(Arrays.asList("00","01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"));
         this.vehicleType = new ArrayList<>(Arrays.asList("Small", "Large"));
         this.poolLocation = new ArrayList<>();
+        this.currentCourse = new ArrayList<>();
     }
 
     public void authenticateLogin(String username, String password){
         Log.d("login","msk login");
         User user = new User(username,password);
         String json = gson.toJson(user);
-        this.dbHelper.addUername(username);
         try {
             JSONObject jsonObject = new JSONObject(json);
             JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, BASE_URL + AUTHENTICATE, jsonObject, new Response.Listener<JSONObject>() {
@@ -88,7 +87,7 @@ public class MainPresenter {
                     try {
                         if(null!=resp){
                             LoginMessage loginMessage = gson.fromJson(resp,LoginMessage.class);
-                            setLoginMessage(loginMessage);
+                            setLoginMessage(loginMessage, username);
                         }else{
                             String err = response.getString("errcode");
                             toastMessage(err);
@@ -112,9 +111,10 @@ public class MainPresenter {
 
     }
 
-    public void setLoginMessage(LoginMessage loginMessage){
+    public void setLoginMessage(LoginMessage loginMessage, String username){
         this.loginMessage = loginMessage;
-        this.dbHelper.addToken(this.loginMessage.getToken());
+        Log.d("token",this.loginMessage.getToken());
+        this.dbHelper.addUser(this.loginMessage.getToken(),username,0,0);
         this.ui.changePage(1);
     }
 
@@ -151,7 +151,6 @@ public class MainPresenter {
                 Map<String,String> headers= new HashMap<String,String>();
                 headers.put("Authorization", "Bearer "+ token);
                 return headers;
-//                return super.getHeaders();
             }
         };
         requestQueue.add(jsonObjectRequest);
@@ -161,48 +160,68 @@ public class MainPresenter {
     //cek apakah hour beneran int ato time takutnya salah
     //date juga takut salah klo tipe nya date
     //klo g jalan coba pake try catch si throws exceptionnya
-    public void getCourses(String source, String destination, String vehicleType, Date date, int hour) throws MalformedURLException {
+    public void getCourses(String source, String destination, String vehicleType, String date, String hour) {
+        Log.d("msk getCourse","msk");
         Uri uri = Uri.parse(BASE_URL + COURSES).buildUpon().appendQueryParameter(SOURCE, source)
                 .appendQueryParameter(DESTINATION, destination)
                 .appendQueryParameter(VEHICLE, vehicleType)
-                .appendQueryParameter(DATE, date.toString())
-                .appendQueryParameter(HOUR, String.valueOf(hour)).build();
+                .appendQueryParameter(DATE, date)
+                .appendQueryParameter(HOUR, hour).build();
 
-        URL url = new URL(uri.toString());
+        Log.d("url get course",uri.toString());
 
-
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url.toString(), null, new Response.Listener<JSONObject>() {
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, uri.toString(), null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 try {
                     String resp = response.getString("payload");
-                    TravelCourses curCourse = gson.fromJson(resp,TravelCourses.class);
-                    addCourse(curCourse);
+                    if(null!=resp){
+                        JSONArray arr = response.getJSONArray("payload");
+                        for(int i=0;i<arr.length();i++){
+                            JSONObject payload = arr.getJSONObject(i);
+                            Log.d("resp course",payload.toString());
+                            String temp=payload.toString();
+                            TravelCourses curCourse = gson.fromJson(temp,TravelCourses.class);
+                            Log.d("resp",curCourse.getCourseId());
+                            addCourse(curCourse);
+                        }
+
+                    }else if(null==resp){
+                        String errCode = response.getString("errcode");
+                        Log.d("getCourse",resp);
+                        toastMessage(errCode);
+                    }
+                    Log.d("payload",resp);
+                    Log.d("msk try","msk");
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-
+                toastMessage("Failed to get course.");
             }
         }){
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String,String> headers= new HashMap<String,String>();
-                headers.put("Authorization", "Bearer "+loginMessage.getToken());
+                headers.put("Authorization", "Bearer "+getTokenFromDb());
                 return headers;
 //                return super.getHeaders();
             }
         };
 
+
+        requestQueue.add(jsonObjectRequest);
+
     }
 //klo g jalan coba pake try catch si throws exceptionnya
     public void getTravelOrderHist(int limit, int offset) throws MalformedURLException {
         Uri uri = Uri.parse(BASE_URL + ORDERS).buildUpon().appendQueryParameter(LIMIT, String.valueOf(limit)).appendQueryParameter(OFFSET, String.valueOf(offset)).build();
-        URL url =  new URL(uri.toString());
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url.toString() + ROUTES, null, new Response.Listener<JSONObject>() {
+        Log.d("url hist",uri.toString());
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, uri.toString(), null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 try {
@@ -213,6 +232,8 @@ public class MainPresenter {
                         TravelOrderHist currTO = gson.fromJson(temp, TravelOrderHist.class);
                         addTravelOrderHist(currTO);
                     }
+
+                    getUsername();
                 } catch (JSONException e) {
                     e.printStackTrace();
 
@@ -221,13 +242,13 @@ public class MainPresenter {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                toastMessage("Failed to get routes.");
+                toastMessage("Failed to get history.");
             }
         }){
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String,String> headers= new HashMap<String,String>();
-                headers.put("Authorization", "Bearer "+loginMessage.getToken());
+                headers.put("Authorization", "Bearer "+getTokenFromDb());
                 return headers;
 //                return super.getHeaders();
             }
@@ -235,51 +256,56 @@ public class MainPresenter {
         requestQueue.add(jsonObjectRequest);
     }
 
-    public void order(String course_id, String seats){
+    public void order(String course_id, String seats) throws JSONException {
         Pesan pesan = new Pesan(course_id,seats);
         String json = gson.toJson(pesan);
-        try {
-            JSONObject jsonObject = new JSONObject(json);
-            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, BASE_URL + GET_ORDER, jsonObject, new Response.Listener<JSONObject>() {
-                @Override
-                public void onResponse(JSONObject response) {
-                    String msg="";
+        Log.d("jsonOrder",json);
+        JSONObject jsonObject = new JSONObject(json);
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, BASE_URL + GET_ORDER, jsonObject, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                String msg= null;
+                try {
+                    msg = response.getString("message");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                if(msg.equals("Order submitted")){
+                    Log.d("order",msg);
+                    JSONArray arr = null;
                     try {
-                        msg = response.getString("message");
+                        arr = response.getJSONArray("payload");
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
-                    if(msg=="Order submitted"){
-                        JSONArray arr = null;
+                    for(int i=0;i<arr.length();i++){
+                        JSONObject payload = null;
                         try {
-                            arr = response.getJSONArray("payload");
+                            payload = arr.getJSONObject(i);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
-                        for(int i=0;i<arr.length();i++){
-                            JSONObject payload = null;
-                            try {
-                                payload = arr.getJSONObject(i);
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-                            String temp = payload.toString();
-                            Order currOrder= gson.fromJson(temp, Order.class);
-                            addTempOrder(currOrder);
-                        }
+                        String temp = payload.toString();
+                        Order currOrder= gson.fromJson(temp, Order.class);
+                        displayTicket(currOrder);
                     }
                 }
-            }, new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) {
-                    toastMessage("Failed to order.");
-                }
-            });
-            requestQueue.add(jsonObjectRequest);
-        } catch (JSONException e) {
-            e.printStackTrace();
-
-        }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                toastMessage("Failed to order.");
+            }
+        }){
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String,String> headers= new HashMap<String,String>();
+                headers.put("Authorization", "Bearer "+getTokenFromDb());
+                return headers;
+//                return super.getHeaders();
+            }
+        };
+        requestQueue.add(jsonObjectRequest);
     }
 
 
@@ -292,15 +318,19 @@ public class MainPresenter {
     }
 
     public void addCourse(TravelCourses course){
-        this.currentCourse = course;
+        Log.d("addCourse", course.getCourseId());
+        Log.d("addCourse2", course.getVehicleType());
+        this.currentCourse.add(course);
+        updateStatusKursi();
     }
 
     public void addTravelOrderHist(TravelOrderHist travelOrder){
+        Log.d("msk tambah hist",travelOrder.getOrder_id());
         this.orderHist.add(travelOrder);
+        updateHistory();
     }
 
     public Boolean isLogin(){
-//        Log.d("pjgToken",String.valueOf(this.loginMessage.getToken().length()));
         String token = this.dbHelper.getToken();
         if(null==token || token.equals("")){
             return false;
@@ -310,16 +340,9 @@ public class MainPresenter {
     }
 
     public String getTokenFromDb(){
-        Log.d("token", this.dbHelper.getToken());
         String token = this.dbHelper.getToken();
         return token;
-//        this.loginMessage.setToken(this.dbHelper.getToken());
     }
-
-    public void addTempOrder(Order currOrder){
-        this.order = currOrder;
-    }
-
 
     public void updateListAsalTujuan(){
         for(int i=0;i<this.rute.size()-1;i++){
@@ -371,6 +394,96 @@ public class MainPresenter {
         this.poolLocation.add(shuttleLocCik);
         Log.d("di mp",this.poolLocation.toString());
         this.ui.updatePoolLocation(this.poolLocation);
+    }
+
+    public void getUsername(){
+        this.ui.updateUname(this.dbHelper.getUsername());
+    }
+
+    public void updateHistory(){
+        this.ui.updateHistory(this.orderHist);
+    }
+
+    public void updateStatusKursi(){
+//        Log.d("updatekursi",tc.getVehicleType());
+        TravelCourses tc = this.currentCourse.get(0);
+        if(tc.getVehicleType().equals("Small")){
+            boolean[] booked=new boolean[6];
+            boolean[] dipencet=new boolean[6];
+            for(int i=0;i<tc.getSeats().length;i++){
+                Log.d("di presenter i ", String.valueOf(tc.getSeats()[i]-1));
+                booked[tc.getSeats()[i]-1]=true;
+                dipencet[tc.getSeats()[i]-1]=true;
+            }
+            Log.d("booked",Arrays.toString(booked));
+            Log.d("dipencet",Arrays.toString(dipencet));
+            ui.updateCourse(tc,booked,dipencet,11);
+        }else if(tc.getVehicleType().equals("Large")){
+            boolean[] booked=new boolean[10];
+            boolean[] dipencet=new boolean[10];
+            for(int i=0;i<tc.getSeats().length;i++){
+                booked[tc.getSeats()[i]-1]=true;
+                dipencet[tc.getSeats()[i]-1]=true;
+            }
+            ui.updateCourse(tc,booked,dipencet,10);
+        }
+
+    }
+
+    public String getSeatNumber(boolean[] booked, boolean[] dipencet){
+        String seats="";
+        int counter=0;
+        for(int i=0;i<booked.length;i++){
+            if(booked[i]==false && dipencet[i]==true){
+                if(counter==0){
+                    seats+=String.valueOf(i+1);
+                }else if(counter>0){
+                    seats=seats+","+String.valueOf(i+1);
+                }
+                counter++;
+            }
+        }
+        return seats;
+    }
+
+    public int jumlahSeatDipesan(boolean[] booked, boolean[] dipencet){
+        int counter=0;
+        for(int i=0;i<booked.length;i++){
+            if(booked[i]!=true && dipencet[i]==true){
+                counter++;
+            }
+        }
+        return counter;
+    }
+
+    public String getUsernameFromDb(){
+        return this.dbHelper.getUsername();
+    }
+
+    public void displayTicket(Order order){
+        String username = getUsernameFromDb();
+        Log.d("order",order.getOrderId());
+        this.ui.displayTicket(order, username);
+    }
+
+    public void logout(){
+        this.dbHelper.deleteToken(this.dbHelper.getToken());
+        activity.finish();
+    }
+
+    public void updateOrderAndPoint(){
+        int point = this.dbHelper.getJumlahPoint();
+        int orderCount = this.dbHelper.getJumlahOrder();
+        String token = this.dbHelper.getToken();
+        this.dbHelper.updatePoinAndOrder(orderCount+1,point+100,token);
+    }
+
+    public int getOrderCount(){
+        return this.dbHelper.getJumlahOrder();
+    }
+
+    public int getPoint(){
+        return this.dbHelper.getJumlahPoint();
     }
 
 }

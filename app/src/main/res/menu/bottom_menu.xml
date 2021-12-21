@@ -3,7 +3,6 @@
     <item android:title="Home" android:icon="@drawable/ic_home" android:id="@+id/nav_home"/>
     <item android:title="Book Now" android:icon="@drawable/ic_book_now" android:id="@+id/nav_bookNow"/>
     <item android:title="My Booking" android:icon="@drawable/ic_booking_hist" android:id="@+id/nav_bookHist"/>
-    <item android:title="Tiket" android:icon="@drawable/ic_tiket" android:id="@+id/nav_tiket"/>
     <item android:title="Profile" android:icon="@drawable/ic_person" android:id="@+id/nav_profile"/>
     />
 </menu>

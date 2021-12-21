@@ -53,26 +53,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="1">
+            >
 
             <TextView
                 android:fontFamily="@font/gotham"
                 android:textSize="16sp"
-                android:layout_weight=".5"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/tanggal_berangkat_hist"
                 android:text="@string/_20_december_2021"
                 android:textAlignment="center"/>
-            <TextView
-                android:layout_weight=".5"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/gotham"
-                android:textSize="16sp"
-                android:id="@+id/tv_jam_keberangkatan_hist"
-                android:text="19:00"
-                android:textAlignment="center" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -95,7 +86,8 @@
                 android:layout_weight=".5"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/nama_pemesan_hist"/>
+                android:id="@+id/nama_pemesan_hist"
+                android:layout_marginRight="10dp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -118,7 +110,8 @@
                 android:layout_weight=".5"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/seat_num_hist"/>
+                android:id="@+id/seat_num_hist"
+                android:layout_marginRight="10dp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -142,7 +135,8 @@
                 android:layout_weight=".5"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/id_book_hist"/>
+                android:id="@+id/id_book_hist"
+                android:layout_marginRight="10dp"/>
         </LinearLayout>
 
 

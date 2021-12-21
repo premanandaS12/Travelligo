@@ -1,20 +1,20 @@
 package com.example.tubesp3b;
 
 public class Order {
-    private String orderId;
+    private String order_id;
     private int[] seats;
 
-    public Order(String orderId, int[] seats) {
-        this.orderId = orderId;
+    public Order(String order_id, int[] seats) {
+        this.order_id = order_id;
         this.seats = seats;
     }
 
     public String getOrderId() {
-        return orderId;
+        return order_id;
     }
 
     public void setOrderId(String orderId) {
-        this.orderId = orderId;
+        this.order_id = order_id;
     }
 
     public int[] getSeats() {

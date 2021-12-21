@@ -12,8 +12,10 @@ import android.view.ViewGroup;
 
 import com.example.tubesp3b.databinding.FragmentHomeBinding;
 
+import java.util.List;
 
-public class HomeFragment extends Fragment implements View.OnClickListener {
+
+public class HomeFragment extends Fragment implements View.OnClickListener, IMainActivity {
     private Context context;
     private MainActivity activity;
     private MainPresenter mainPresenter;
@@ -33,8 +35,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         this.binding = FragmentHomeBinding.inflate(inflater,container,false);
+        this.mainPresenter = new MainPresenter(this, this.activity, this.context);
+        this.binding.tvUsername.setText(this.mainPresenter.getUsernameFromDb());
         this.binding.btnBook.setOnClickListener(this);
-        this.binding.btnPoint.setOnClickListener(this);
         this.binding.btnLocation.setOnClickListener(this);
         this.binding.btnTelp.setOnClickListener(this);
         this.binding.btnWa.setOnClickListener(this);
@@ -51,10 +54,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             Bundle args = new Bundle();
             args.putInt("page",2);
             this.getParentFragmentManager().setFragmentResult("changePage",args);
-        }else if(view==this.binding.btnPoint){
-//            Bundle args = new Bundle();
-//            args.putInt("page",2);
-//            this.getParentFragmentManager().setFragmentResult("changePage",args);
         }else if(view==this.binding.btnLocation){
             Bundle args = new Bundle();
             args.putInt("page",6);
@@ -76,5 +75,70 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         }else if(view==this.binding.btnWa){
 
         }
+    }
+
+    @Override
+    public void toastMessage(String msg) {
+
+    }
+
+    @Override
+    public void changePage(int page) {
+
+    }
+
+    @Override
+    public void updateAsal(List<String> asal) {
+
+    }
+
+    @Override
+    public void updateTujuan(List<String> tujuan) {
+
+    }
+
+    @Override
+    public void updateJamBerangkat(List<String> jam) {
+
+    }
+
+    @Override
+    public void updateVehicle(List<String> vehicleType) {
+
+    }
+
+    @Override
+    public void ruteDipilih(Payload payload) {
+
+    }
+
+    @Override
+    public void updatePoolLocation(List<Shuttle> poolLocation) {
+
+    }
+
+    @Override
+    public void updateUname(String username) {
+
+    }
+
+    @Override
+    public void updateHistory(List<TravelOrderHist> history) {
+
+    }
+
+    @Override
+    public void updateCourse(TravelCourses travelCourses, boolean[] booked, boolean[] dipencet, int page) {
+
+    }
+
+    @Override
+    public void updateTiket(String username, TravelOrderHist history) {
+
+    }
+
+    @Override
+    public void displayTicket(Order order, String username) {
+
     }
 }

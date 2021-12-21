@@ -3,28 +3,28 @@ package com.example.tubesp3b;
 import java.lang.reflect.Array;
 
 public class TravelCourses {
-    private String courseId;
+    private String course_id;
     private String source;
     private String destination;
-    private String dateTime;
-    private String vehicleType;
-    private int num_Seats;
+    private String datetime;
+    private String vehicle;
+    private int num_seats;
     private int[] seats;
     private int fee;
 
-    public TravelCourses(String courseId, String source, String destination, String dateTime, String vehicleType, int num_Seats, int[] seats, int fee){
-        this.courseId = courseId;
+    public TravelCourses(String course_id, String source, String destination, String datetime, String vehicle, int num_seats, int[] seats, int fee){
+        this.course_id = course_id;
         this.source = source;
         this.destination = destination;
-        this.dateTime = dateTime;
-        this.vehicleType = vehicleType;
-        this.num_Seats = num_Seats;
+        this.datetime = datetime;
+        this.vehicle = vehicle;
+        this.num_seats = num_seats;
         this.seats = seats;
         this.fee = fee;
     }
 
     public String getCourseId() {
-        return courseId;
+        return course_id;
     }
 
     public String getSource() {
@@ -36,15 +36,15 @@ public class TravelCourses {
     }
 
     public String getDateTime() {
-        return dateTime;
+        return datetime;
     }
 
     public String getVehicleType() {
-        return vehicleType;
+        return vehicle;
     }
 
     public int getNum_Seats() {
-        return num_Seats;
+        return num_seats;
     }
 
     public int[] getSeats() {
@@ -56,7 +56,7 @@ public class TravelCourses {
     }
 
     public void setCourseId(String courseId) {
-        this.courseId = courseId;
+        this.course_id = courseId;
     }
 
     public void setSource(String source) {
@@ -67,16 +67,16 @@ public class TravelCourses {
         this.destination = destination;
     }
 
-    public void setDateTime(String dateTime) {
-        this.dateTime = dateTime;
+    public void setDateTime(String datetime) {
+        this.datetime = datetime;
     }
 
-    public void setVehicleType(String vehicleType) {
-        this.vehicleType = vehicleType;
+    public void setVehicleType(String vehicle) {
+        this.vehicle = vehicle;
     }
 
-    public void setNum_Seats(int num_Seats) {
-        this.num_Seats = num_Seats;
+    public void setNum_Seats(int num_seats) {
+        this.num_seats = num_seats;
     }
 
     public void setSeats(int[] seats) {

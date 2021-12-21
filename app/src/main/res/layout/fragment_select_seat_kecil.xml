@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".SeatLayoutKecil">
 
 
     <com.google.android.material.appbar.AppBarLayout
@@ -98,7 +99,7 @@
                             android:layout_height="match_parent"
                             android:layout_gravity="center"
                             android:layout_weight="10"
-                            android:src="@drawable/ic_swap_horiz_white_24dp" />
+                            android:src="@drawable/ic_baseline_arrow_forward_24" />
 
                         <TextView
                             android:id="@+id/tv_destinasiTujuan"
@@ -200,7 +201,7 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="391dp"
+                    android:layout_height="491dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="-36dp"
                     android:layout_marginRight="8dp"
@@ -208,284 +209,108 @@
                     app:cardUseCompatPadding="true"
                     app:contentPadding="8dp">
 
-
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="345dp"
-                        android:orientation="vertical">
-
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:weightSum="1">
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:layout_marginBottom="16dp"
+                            android:layout_height="0dp"
+                            android:layout_weight=".1"
                             android:orientation="horizontal"
-                            android:weightSum="100">
-
+                            android:weightSum=".9">
                             <LinearLayout
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="33.3"
-                                android:gravity="center">
-
-                                <ImageView
-                                    android:layout_width="16dp"
-                                    android:layout_height="16dp"
-                                    android:layout_marginEnd="4dp"
-                                    android:src="@drawable/booked_img"/>
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/calibri"
-                                    android:text="@string/booked"
-                                    android:textAlignment="center"
-                                    android:textColor="#b2b2b2" />
-
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="33.3"
-                                android:gravity="center">
-
-                                <ImageView
-                                    android:layout_width="16dp"
-                                    android:layout_height="16dp"
-                                    android:layout_marginEnd="4dp"
-                                    android:src="@drawable/available_img" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/calibri"
-                                    android:text="@string/available"
-                                    android:textAlignment="center"
-                                    android:textColor="#b2b2b2" />
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="33.3"
-                                android:gravity="center">
-
-                                <ImageView
-                                    android:layout_width="16dp"
-                                    android:layout_height="16dp"
-                                    android:layout_marginEnd="4dp"
-                                    android:src="@drawable/your_seat_img" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/calibri"
-                                    android:text="@string/your_seat"
-                                    android:textAlignment="center"
-                                    android:textColor="#b2b2b2" />
-                            </LinearLayout>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="4dp"
-                            android:layout_weight="100"
-                            android:orientation="horizontal">
-
-                            <LinearLayout
-                                android:layout_width="360dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:gravity="center">
-
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginEnd="16dp"
-                                    android:fontFamily="@font/print_clearly"
-                                    android:text="@string/_1"
-                                    android:textColor="#c3c3c3"
-                                    android:textSize="18sp"
-                                    android:textStyle="bold"
-                                    android:visibility="invisible" />
-
-                                <TextView
-                                    android:layout_width="36dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginEnd="4dp"
-                                    android:fontFamily="@font/print_clearly"
-                                    android:text="@string/a"
-                                    android:textAlignment="center"
-                                    android:textColor="#c3c3c3"
-                                    android:textSize="18sp"
-                                    android:textStyle="bold" />
-
-                                <TextView
-                                    android:layout_width="36dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="4dp"
-                                    android:fontFamily="@font/print_clearly"
-                                    android:text="@string/b"
-                                    android:textAlignment="center"
-                                    android:textColor="#c3c3c3"
-                                    android:textSize="18sp"
-                                    android:textStyle="bold" />
-
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:gravity="center" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:layout_weight="100"
-                            android:orientation="horizontal">
-
-                            <LinearLayout
-                                android:layout_width="357dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:gravity="center">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginEnd="16dp"
-                                    android:fontFamily="@font/print_clearly"
-                                    android:text="@string/_1"
-                                    android:textColor="#c3c3c3"
-                                    android:textSize="18sp"
-                                    android:textStyle="bold" />
-
-                                <ImageView
-                                    android:layout_width="36dp"
-                                    android:layout_height="36dp"
-                                    android:layout_marginEnd="4dp"
-                                    android:src="@drawable/booked_img"
-                                    android:id="@+id/iv_kecil_1a"/>
-
-                                <ImageView
-                                    android:layout_width="36dp"
-                                    android:layout_height="36dp"
-                                    android:layout_marginStart="4dp"
-                                    android:src="@drawable/available_img"
-                                    android:id="@+id/iv_kecil_1b"/>
-
-                            </LinearLayout>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:layout_weight="100"
-                            android:orientation="horizontal">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
+                                android:layout_height="match_parent"
+                                android:layout_weight=".3"
                                 android:gravity="center"
-                                tools:ignore="NestedWeights">
+                                >
+
+                                <ImageView
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:layout_marginEnd="4dp"
+                                    android:src="@drawable/tanda_booked" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginEnd="16dp"
-                                    android:fontFamily="@font/print_clearly"
-                                    android:text="@string/_2"
-                                    android:textColor="#c3c3c3"
-                                    android:textSize="18sp"
-                                    android:textStyle="bold" />
-
-                                <ImageView
-                                    android:layout_width="36dp"
-                                    android:layout_height="36dp"
-                                    android:layout_marginEnd="4dp"
-                                    android:src="@drawable/available_img"
-                                    android:id="@+id/iv_kecil_2a"/>
-
-                                <ImageView
-                                    android:layout_width="36dp"
-                                    android:layout_height="36dp"
-                                    android:layout_marginStart="4dp"
-                                    android:src="@drawable/booked_img"
-                                    android:id="@+id/iv_kecil_2b"/>
+                                    android:fontFamily="@font/calibri"
+                                    android:text="@string/tv_booked"
+                                    android:textAlignment="center"
+                                    android:textColor="#b2b2b2" />
 
                             </LinearLayout>
-
                             <LinearLayout
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:gravity="center" />
+                                android:layout_height="match_parent"
+                                android:layout_weight=".3"
+                                android:gravity="center"
+                                >
+
+                                <ImageView
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:layout_marginEnd="4dp"
+                                    android:src="@drawable/tanda_available" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/calibri"
+                                    android:text="Available"
+                                    android:textAlignment="center"
+                                    android:textColor="#b2b2b2" />
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight=".3"
+                                android:gravity="center"
+                                >
+
+                                <ImageView
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:layout_marginEnd="4dp"
+                                    android:src="@drawable/chosen_seat" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/calibri"
+                                    android:text="Your Seat"
+                                    android:textAlignment="center"
+                                    android:textColor="#b2b2b2" />
+                            </LinearLayout>
+
 
                         </LinearLayout>
 
-                        <LinearLayout
+
+                        <ImageView
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:layout_weight="100"
-                            android:orientation="horizontal">
+                            android:layout_height="0dp"
+                            android:layout_weight=".9"
+                            android:id="@+id/seat_layout_kecil"/>
 
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:gravity="center">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginEnd="16dp"
-                                    android:fontFamily="@font/print_clearly"
-                                    android:text="@string/_3"
-                                    android:textColor="#c3c3c3"
-                                    android:textSize="18sp"
-                                    android:textStyle="bold" />
-
-                                <ImageView
-                                    android:layout_width="36dp"
-                                    android:layout_height="36dp"
-                                    android:layout_marginEnd="4dp"
-                                    android:src="@drawable/available_img"
-                                    android:id="@+id/iv_kecil_3a"/>
-
-                                <ImageView
-                                    android:layout_width="36dp"
-                                    android:layout_height="36dp"
-                                    android:layout_marginStart="4dp"
-                                    android:src="@drawable/available_img"
-                                    android:id="@+id/iv_kecil_3b"/>
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:gravity="center" />
-
-                        </LinearLayout>
 
                     </LinearLayout>
 
+
                 </androidx.cardview.widget.CardView>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Order Now"
+                    android:id="@+id/btn_order"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="100dp"/>
 
             </LinearLayout>
 

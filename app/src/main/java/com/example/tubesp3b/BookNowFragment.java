@@ -12,19 +12,22 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
+import android.widget.Toast;
 
 import com.example.tubesp3b.databinding.FragmentBookNowBinding;
 import com.example.tubesp3b.databinding.FragmentHomeBinding;
 
+import java.net.MalformedURLException;
 import java.security.PrivateKey;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
 
-public class BookNowFragment extends Fragment implements View.OnClickListener, IMainActivity {
+public class BookNowFragment extends Fragment implements View.OnClickListener, IMainActivity{
     private Context context;
     private MainActivity activity;
     private MainPresenter mainPresenter;
@@ -34,6 +37,11 @@ public class BookNowFragment extends Fragment implements View.OnClickListener, I
     private List<String> tujuan;
     private List<String> jam;
     private List<String> vehicleType;
+    String kotaAsal="";
+    String kotaTujuan="";
+    String date="";
+    String waktuKeberangkatan="";
+    String jenisMobil="";
 
     public BookNowFragment(MainActivity activity, Context context) {
         this.activity = activity;
@@ -66,6 +74,7 @@ public class BookNowFragment extends Fragment implements View.OnClickListener, I
                 bulan+=1;
                 Log.d("tanggal", String.valueOf(tanggal)+" - "+ String.valueOf(bulan)+" - "+String.valueOf(tahun));
                 binding.tanggalBerangkat.setText(String.valueOf(tanggal)+" - "+ String.valueOf(bulan)+" - "+String.valueOf(tahun));
+                date= String.valueOf(tanggal)+"-"+String.valueOf(bulan)+"-"+String.valueOf(tahun);
             }
         };
 
@@ -86,6 +95,56 @@ public class BookNowFragment extends Fragment implements View.OnClickListener, I
         this.binding.waktuBerangkat.setAdapter(adapterJam);
         this.binding.vehicleType.setAdapter(adapterVehicle);
 
+
+        this.binding.asal.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                kotaAsal = adapterView.getItemAtPosition(i).toString();
+//                Toast.makeText(context,kotaAsal,Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+        this.binding.tujuan.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                kotaTujuan = adapterView.getItemAtPosition(i).toString();
+//                Toast.makeText(context,kotaTujuan,Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+        this.binding.waktuBerangkat.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                waktuKeberangkatan = adapterView.getItemAtPosition(i).toString();
+//                Toast.makeText(context,waktuKeberangkatan,Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+        this.binding.vehicleType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                jenisMobil= adapterView.getItemAtPosition(i).toString();
+//                Toast.makeText(context,jenisMobil,Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
         this.binding.book.setOnClickListener(this);
 
         return this.binding.getRoot();
@@ -103,22 +162,24 @@ public class BookNowFragment extends Fragment implements View.OnClickListener, I
             d.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             d.show();
         }else if(view==this.binding.book){
+            this.mainPresenter.getCourses(this.kotaAsal,this.kotaTujuan,this.jenisMobil,this.date, this.waktuKeberangkatan);
+//            try {
+//
+//            } catch (MalformedURLException e) {
+//                e.printStackTrace();
+//            }
 
         }
     }
 
     @Override
     public void toastMessage(String msg) {
-
+        Toast.makeText(this.context,msg, Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void changePage(int page) {
-//        Masuk halaman pilih seat
 
-//        Bundle args = new Bundle();
-//        args.putInt("page",);
-//        this.getParentFragmentManager().setFragmentResult("changePage",args);
     }
 
     @Override
@@ -150,5 +211,54 @@ public class BookNowFragment extends Fragment implements View.OnClickListener, I
     public void updatePoolLocation(List<Shuttle> poolLocation) {
 
     }
+
+    @Override
+    public void updateUname(String username) {
+
+    }
+
+    @Override
+    public void updateHistory(List<TravelOrderHist> history) {
+
+    }
+
+    @Override
+    public void updateCourse(TravelCourses travelCourses, boolean[] booked, boolean[] dipencet, int page) {
+        if(page==10){
+            Bundle args = new Bundle();
+            args.putBooleanArray("booked",booked);
+            args.putBooleanArray("dipencet",dipencet);
+            args.putString("courseId",travelCourses.getCourseId());
+            args.putString("source",travelCourses.getSource());
+            args.putString("destination",travelCourses.getDestination());
+            args.putString("dateTime",travelCourses.getDateTime());
+            args.putInt("fee",travelCourses.getFee());
+            this.getParentFragmentManager().setFragmentResult("courseSeatBesar",args);
+        }else if(page==11){
+            Bundle args = new Bundle();
+            args.putBooleanArray("booked",booked);
+            args.putBooleanArray("dipencet",dipencet);
+            args.putString("courseId",travelCourses.getCourseId());
+            args.putString("source",travelCourses.getSource());
+            args.putString("destination",travelCourses.getDestination());
+            args.putString("dateTime",travelCourses.getDateTime());
+            args.putInt("fee",travelCourses.getFee());
+            this.getParentFragmentManager().setFragmentResult("courseSeatKecil",args);
+        }
+        Bundle bun = new Bundle();
+        bun.putInt("page", page);
+        this.getParentFragmentManager().setFragmentResult("changePage",bun);
+    }
+
+    @Override
+    public void updateTiket(String username, TravelOrderHist history) {
+
+    }
+
+    @Override
+    public void displayTicket(Order order, String username) {
+
+    }
+
 
 }

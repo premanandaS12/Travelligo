@@ -1,20 +1,20 @@
 package com.example.tubesp3b;
 
 public class Pesan {
-    private String courseid;
+    private String course_id;
     private String seats;
 
-    public Pesan(String courseid, String seats) {
-        this.courseid = courseid;
+    public Pesan(String course_id, String seats) {
+        this.course_id = course_id;
         this.seats = seats;
     }
 
     public String getCourseid() {
-        return courseid;
+        return course_id;
     }
 
-    public void setCourseid(String courseid) {
-        this.courseid = courseid;
+    public void setCourseid(String course_id) {
+        this.course_id = course_id;
     }
 
     public String getSeats() {

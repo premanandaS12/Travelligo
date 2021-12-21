@@ -97,4 +97,29 @@ public class LoginFragment extends Fragment implements View.OnClickListener, IMa
     public void updatePoolLocation(List<Shuttle> poolLocation) {
 
     }
+
+    @Override
+    public void updateUname(String username) {
+
+    }
+
+    @Override
+    public void updateHistory(List<TravelOrderHist> history) {
+
+    }
+
+    @Override
+    public void updateCourse(TravelCourses travelCourses, boolean[] booked, boolean[] dipencet, int page) {
+
+    }
+
+    @Override
+    public void updateTiket(String username, TravelOrderHist history) {
+
+    }
+
+    @Override
+    public void displayTicket(Order order, String username) {
+
+    }
 }

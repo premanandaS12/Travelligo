@@ -45,6 +45,11 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     private GopayFragment gopay;
     private OvoFragment ovo;
     private ShopeeFragment shopee;
+    private SeatLayout seatLayoutBesar;
+    private SeatLayoutKecil seatLayoutKecil;
+    private PembayaranFragment pembayaran;
+    private TiketFragment tiket;
+
 
     @SuppressLint("ResourceAsColor")
     @Override
@@ -67,18 +72,20 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
         this.mainPresenter = new MainPresenter(this,this,this);
 
-//        set page awal
-//        boolean x=false;
 
         this.home = HomeFragment.newInstance(this,this);
         this.login = LoginFragment.newInstance(this,this);
         this.booking = BookNowFragment.newInstance(this,this);
-//        this.bookingHist = MyBookingHistoryFragment.newInstance(this,this);
+        this.bookingHist = MyBookingHistoryFragment.newInstance(this,this);
         this.profile = ProfileFragment.newInstance(this,this);
         this.location = LocationFragment.newInstance(this,this);
         this.gopay = GopayFragment.newInstance(this, this);
         this.ovo = OvoFragment.newInstance(this, this);
         this.shopee = ShopeeFragment.newInstance(this, this);
+        this.seatLayoutBesar = SeatLayout.newInstance(this,this);
+        this.seatLayoutKecil = SeatLayoutKecil.newInstance(this,this);
+        this.pembayaran = PembayaranFragment.newInstance(this,this);
+        this.tiket = TiketFragment.newInstance(this,this);
 
         if(this.mainPresenter.isLogin()==true){
             changePage(1);
@@ -86,8 +93,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             changePage(0);
             this.binding.bottomNavigationView.setVisibility(View.GONE);
         }
-
-
 
         //Change page
         this.getSupportFragmentManager().setFragmentResultListener("changePage", this, new FragmentResultListener() {
@@ -104,10 +109,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 //        BottomNavigationView navbar = findViewById(R.id.bottomNavigationView);
 //        this.binding.bottomNavigationView.setVisibility(View.GONE);
 
-
-
-
-
     }
 
     @Override
@@ -118,8 +119,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             changePage(2);
         }else if(item.getItemId()==R.id.nav_bookHist){
             changePage(3);
-        }else if(item.getItemId()==R.id.nav_tiket){
-            changePage(4);
         }else if(item.getItemId()==R.id.nav_profile){
             changePage(5);
         }
@@ -135,20 +134,17 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             this.binding.bottomNavigationView.setVisibility(View.VISIBLE);
         }else if(page==2){
             ft.replace(R.id.fragmentContainerView, this.booking).addToBackStack(null);
-//            this.binding.bottomNavigationView.setSelectedItemId(R.id.nav_bookNow);
             this.binding.bottomNavigationView.setVisibility(View.VISIBLE);
-
         }else if(page==3){
             ft.replace(R.id.fragmentContainerView, this.bookingHist).addToBackStack(null);
             this.binding.bottomNavigationView.setVisibility(View.VISIBLE);
         }else if(page==4){
-//            ft.replace(R.id.fragmentContainerView, this.tiket).addToBackStack(null);
+            ft.replace(R.id.fragmentContainerView, this.tiket).addToBackStack(null);
             this.binding.bottomNavigationView.setVisibility(View.VISIBLE);
         }else if(page==5){
             ft.replace(R.id.fragmentContainerView, this.profile).addToBackStack(null);
             this.binding.bottomNavigationView.setVisibility(View.VISIBLE);
         }else if(page==6){
-            Log.d("halaman","6");
             ft.replace(R.id.fragmentContainerView, this.location).addToBackStack(null);
             this.binding.bottomNavigationView.setVisibility(View.VISIBLE);
         }else if(page==7){
@@ -159,6 +155,15 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             this.binding.bottomNavigationView.setVisibility(View.VISIBLE);
         }else if(page==9){
             ft.replace(R.id.fragmentContainerView, this.shopee).addToBackStack(null);
+            this.binding.bottomNavigationView.setVisibility(View.VISIBLE);
+        }else if(page==10){
+            ft.replace(R.id.fragmentContainerView, this.seatLayoutBesar).addToBackStack(null);
+            this.binding.bottomNavigationView.setVisibility(View.VISIBLE);
+        }else if(page==11){
+            ft.replace(R.id.fragmentContainerView, this.seatLayoutKecil).addToBackStack(null);
+            this.binding.bottomNavigationView.setVisibility(View.VISIBLE);
+        }else if(page==12){
+            ft.replace(R.id.fragmentContainerView, this.pembayaran).addToBackStack(null);
             this.binding.bottomNavigationView.setVisibility(View.VISIBLE);
         }
         ft.commit();
@@ -191,6 +196,31 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
     @Override
     public void updatePoolLocation(List<Shuttle> poolLocation) {
+
+    }
+
+    @Override
+    public void updateUname(String username) {
+
+    }
+
+    @Override
+    public void updateHistory(List<TravelOrderHist> history) {
+
+    }
+
+    @Override
+    public void updateCourse(TravelCourses travelCourses, boolean[] booked, boolean[] dipencet, int page) {
+
+    }
+
+    @Override
+    public void updateTiket(String username, TravelOrderHist history) {
+
+    }
+
+    @Override
+    public void displayTicket(Order order, String username) {
 
     }
 

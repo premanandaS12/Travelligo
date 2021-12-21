@@ -88,4 +88,29 @@ public class LocationFragment extends Fragment implements IMainActivity {
         Log.d("poolLocation", poolLocation.toString());
         this.adapter.updateLocListAdapter(poolLocation);
     }
+
+    @Override
+    public void updateUname(String username) {
+
+    }
+
+    @Override
+    public void updateHistory(List<TravelOrderHist> history) {
+
+    }
+
+    @Override
+    public void updateCourse(TravelCourses travelCourses, boolean[] booked, boolean[] dipencet, int page) {
+
+    }
+
+    @Override
+    public void updateTiket(String username, TravelOrderHist history) {
+
+    }
+
+    @Override
+    public void displayTicket(Order order, String username) {
+
+    }
 }
