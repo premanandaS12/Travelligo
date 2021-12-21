@@ -1,6 +1,7 @@
 package com.example.tubesp3b;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.util.Log;
 
@@ -435,6 +436,7 @@ public class MainPresenter {
 
     public void displayTicket(Order order){
         String username = getUsernameFromDb();
+        updateOrderAndPoint();
         this.ui.displayTicket(order, username);
     }
 
@@ -456,6 +458,12 @@ public class MainPresenter {
 
     public int getPoint(){
         return this.dbHelper.getJumlahPoint();
+    }
+
+    public void dial(String telp){
+        Intent intent = new Intent(Intent.ACTION_DIAL);
+        intent.setData(Uri.parse("tel:"+telp));
+        activity.startActivity(intent);
     }
 
 }

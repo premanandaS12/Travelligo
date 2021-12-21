@@ -252,4 +252,6 @@ public class BookNowFragment extends Fragment implements View.OnClickListener, I
     }
 
 
+
+
 }

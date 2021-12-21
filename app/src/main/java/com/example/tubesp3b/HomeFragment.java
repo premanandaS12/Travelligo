@@ -37,6 +37,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener, IMai
         this.binding = FragmentHomeBinding.inflate(inflater,container,false);
         this.mainPresenter = new MainPresenter(this, this.activity, this.context);
         this.binding.tvUsername.setText(this.mainPresenter.getUsernameFromDb());
+        this.binding.tvPoint.setText(String.valueOf(this.mainPresenter.getPoint())+" Points");
         this.binding.btnBook.setOnClickListener(this);
         this.binding.btnLocation.setOnClickListener(this);
         this.binding.btnTelp.setOnClickListener(this);
@@ -70,9 +71,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener, IMai
             args.putInt("page",9);
             this.getParentFragmentManager().setFragmentResult("changePage",args);
         }else if(view==this.binding.btnTelp){
-
+            this.mainPresenter.dial("0211234560");
         }else if(view==this.binding.btnWa){
-
+            this.mainPresenter.dial("0811225478");
         }
     }
 

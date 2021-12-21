@@ -13,13 +13,13 @@
     <string name="book">Book</string>
     <string name="points">Points</string>
     <string name="location">Location</string>
-    <string name="valid_until_gopay">Valid until 22/12/2021</string>
+    <string name="valid_until_gopay">Valid until 22/12/2022</string>
     <string name="cashback_gopay">Cashback Rp 12.000,-</string>
-    <string name="valid_ovo">Valid until 22/12/2021</string>
+    <string name="valid_ovo">Valid until 22/12/2022</string>
     <string name="cashback_ovo">Cashback Rp 10.000,-</string>
     <string name="ongoing_promos">Ongoing Promos</string>
     <string name="contact_us">Contact Us</string>
-    <string name="valid_shopeepay">Valid until 22/12/2021</string>
+    <string name="valid_shopeepay">Valid until 22/12/2022</string>
     <string name="cashback_shopeepay">Cashback Rp 30.000,-</string>
     <string name="no_telp_home">+021-1234560</string>
     <string name="no_wa_home">0811225478</string>
@@ -173,6 +173,7 @@
     <!--    fragment_ovo-->
     <string name="tv_cashback_shopee">Cashback Rp 30.000</string>
     <string name="tv_kalimat_shopee">Dapatkan cashback sebesar Rp 30.000 saat bayar tiket dengan Shopee.</string>
+    <string name="_0_points">0 Points</string>
 
 
 </resources>

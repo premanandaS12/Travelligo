@@ -16,17 +16,28 @@
             android:layout_height="0dp"
             android:layout_weight=".1"
             android:orientation="horizontal"
-            android:weightSum=".9">
+            android:weightSum="1.1">
 
             <TextView
                 android:gravity="center"
                 android:id="@+id/tv_username"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight=".6"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:text="@string/user"
                 android:textSize="30sp" />
+
+            <TextView
+                android:gravity="center"
+                android:id="@+id/tv_point"
+                android:layout_width="0dp"
+                android:layout_weight=".5"
+                android:layout_height="match_parent"
+                android:layout_marginRight="20dp"
+                android:text="@string/_0_points"
+                android:textSize="20sp" />
 
 
         </LinearLayout>
