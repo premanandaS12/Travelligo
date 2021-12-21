@@ -1,11 +1,9 @@
 package com.example.tubesp3b;
 
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
-import com.example.tubesp3b.databinding.FragmentLocationItemBinding;
 import com.example.tubesp3b.databinding.FragmentMyBookingHistoryItemBinding;
 
 import java.util.ArrayList;
@@ -97,7 +95,6 @@ public class HistoryAdapter extends BaseAdapter {
             }
             this.binding.seatNumHist.setText(tempSeats);
             this.binding.idBookHist.setText(this.currHistory.getOrder_id());
-
         }
     }
 }

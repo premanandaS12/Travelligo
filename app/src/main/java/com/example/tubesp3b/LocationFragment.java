@@ -37,7 +37,6 @@ public class LocationFragment extends Fragment implements IMainActivity {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        Log.d("hal 6","msk");
         this.presenter = new MainPresenter(this,this.activity,this.context);
         this.binding = FragmentLocationBinding.inflate(inflater, container, false);
         this.adapter = LocationAdapter.getLocationAdapter(activity);

@@ -57,7 +57,6 @@ public class LocationAdapter extends BaseAdapter {
 
     public void updateLocListAdapter(List<Shuttle> getLocation){
         this.location = getLocation;
-        Log.d("di adp", this.location.toString());
         notifyDataSetChanged();
     }
 

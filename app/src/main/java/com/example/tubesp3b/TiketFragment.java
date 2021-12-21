@@ -1,20 +1,15 @@
 package com.example.tubesp3b;
 
-import android.app.DatePickerDialog;
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.DatePicker;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentResultListener;
 
-import com.example.tubesp3b.databinding.FragmentBookNowBinding;
-import com.example.tubesp3b.databinding.FragmentMyBookingHistoryBinding;
 import com.example.tubesp3b.databinding.FragmentTiketBinding;
 
 public class TiketFragment extends Fragment {

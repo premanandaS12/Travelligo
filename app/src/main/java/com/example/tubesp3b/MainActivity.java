@@ -68,10 +68,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         this.fragmentManager = this.getSupportFragmentManager();
         FragmentTransaction ft = fragmentManager.beginTransaction();
 
-        Log.d("blom login","msk");
-
         this.mainPresenter = new MainPresenter(this,this,this);
-
 
         this.home = HomeFragment.newInstance(this,this);
         this.login = LoginFragment.newInstance(this,this);

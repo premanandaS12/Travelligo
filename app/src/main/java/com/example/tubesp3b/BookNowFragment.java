@@ -8,7 +8,6 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,10 +17,7 @@ import android.widget.DatePicker;
 import android.widget.Toast;
 
 import com.example.tubesp3b.databinding.FragmentBookNowBinding;
-import com.example.tubesp3b.databinding.FragmentHomeBinding;
 
-import java.net.MalformedURLException;
-import java.security.PrivateKey;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -72,7 +68,6 @@ public class BookNowFragment extends Fragment implements View.OnClickListener, I
             @Override
             public void onDateSet(DatePicker datePicker, int tahun, int bulan, int tanggal) {
                 bulan+=1;
-                Log.d("tanggal", String.valueOf(tanggal)+" - "+ String.valueOf(bulan)+" - "+String.valueOf(tahun));
                 binding.tanggalBerangkat.setText(String.valueOf(tanggal)+" - "+ String.valueOf(bulan)+" - "+String.valueOf(tahun));
                 date= String.valueOf(tanggal)+"-"+String.valueOf(bulan)+"-"+String.valueOf(tahun);
             }
@@ -100,7 +95,6 @@ public class BookNowFragment extends Fragment implements View.OnClickListener, I
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 kotaAsal = adapterView.getItemAtPosition(i).toString();
-//                Toast.makeText(context,kotaAsal,Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -112,7 +106,6 @@ public class BookNowFragment extends Fragment implements View.OnClickListener, I
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 kotaTujuan = adapterView.getItemAtPosition(i).toString();
-//                Toast.makeText(context,kotaTujuan,Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -124,7 +117,6 @@ public class BookNowFragment extends Fragment implements View.OnClickListener, I
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 waktuKeberangkatan = adapterView.getItemAtPosition(i).toString();
-//                Toast.makeText(context,waktuKeberangkatan,Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -136,7 +128,6 @@ public class BookNowFragment extends Fragment implements View.OnClickListener, I
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 jenisMobil= adapterView.getItemAtPosition(i).toString();
-//                Toast.makeText(context,jenisMobil,Toast.LENGTH_SHORT).show();
             }
 
             @Override

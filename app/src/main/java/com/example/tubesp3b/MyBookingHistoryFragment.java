@@ -11,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.example.tubesp3b.databinding.FragmentLoginBinding;
 import com.example.tubesp3b.databinding.FragmentMyBookingHistoryBinding;
 
 import java.net.MalformedURLException;
@@ -45,7 +44,6 @@ public class MyBookingHistoryFragment extends Fragment implements IMainActivity 
         this.adapter = HistoryAdapter.getHistoryAdapter(this.activity);
         try {
             int orderCount = this.presenter.getOrderCount();
-            Log.d("oc",String.valueOf(orderCount));
             int loop = (int) Math.ceil(orderCount*1.0/10);
             if(loop==0){
                 loop=1;
@@ -113,7 +111,6 @@ public class MyBookingHistoryFragment extends Fragment implements IMainActivity 
 
     @Override
     public void updateHistory(List<TravelOrderHist> history) {
-        Log.d("history",history.toString());
         this.adapter.updateHistoryListAdapter(history);
         this.binding.listBookHistory.setAdapter(this.adapter);
     }

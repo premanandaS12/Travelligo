@@ -7,28 +7,17 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.os.Bundle;
-import android.util.Log;
-import android.util.TypedValue;
 import android.view.GestureDetector;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentResultListener;
 
-import com.example.tubesp3b.databinding.FragmentSelectSeatBinding;
 import com.example.tubesp3b.databinding.FragmentSelectSeatKecilBinding;
 
 public class SeatLayoutKecil extends Fragment implements View.OnTouchListener, IMainActivity, View.OnClickListener {
@@ -112,9 +101,6 @@ public class SeatLayoutKecil extends Fragment implements View.OnTouchListener, I
         int seatnum = 1;
         int toptext = 125;
         int counter=0;
-
-        Log.d("booked di kecil", Arrays.toString(booked));
-        Log.d("dipencet di kecil",Arrays.toString(dipencet));
 
         for(int i=0;i<3;i++){
             int left = (w/2)-175;
@@ -274,7 +260,6 @@ public class SeatLayoutKecil extends Fragment implements View.OnTouchListener, I
 
         @Override
         public boolean onDown(MotionEvent e) {
-            Log.d("x dan y",String.valueOf(e.getX())+" dan "+String.valueOf(e.getY()) );
             int top = 50;
             int bottom = 200;
             int counter=0;
@@ -306,7 +291,6 @@ public class SeatLayoutKecil extends Fragment implements View.OnTouchListener, I
             }
             binding.seatLayoutKecil.invalidate();
             return super.onDown(e);
-
         }
     }
 }

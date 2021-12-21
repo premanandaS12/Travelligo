@@ -18,11 +18,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -75,7 +73,6 @@ public class MainPresenter {
     }
 
     public void authenticateLogin(String username, String password){
-        Log.d("login","msk login");
         User user = new User(username,password);
         String json = gson.toJson(user);
         try {
@@ -108,12 +105,10 @@ public class MainPresenter {
             e.printStackTrace();
 
         }
-
     }
 
     public void setLoginMessage(LoginMessage loginMessage, String username){
         this.loginMessage = loginMessage;
-        Log.d("token",this.loginMessage.getToken());
         this.dbHelper.addUser(this.loginMessage.getToken(),username,0,0);
         this.ui.changePage(1);
     }
@@ -123,7 +118,6 @@ public class MainPresenter {
             @Override
             public void onResponse(JSONObject response) {
                 try {
-                    Log.d("route", response.toString());
                     JSONArray arr = response.getJSONArray("payload");
                     for(int i=0;i<arr.length();i++){
                         JSONObject payload = arr.getJSONObject(i);
@@ -161,14 +155,11 @@ public class MainPresenter {
     //date juga takut salah klo tipe nya date
     //klo g jalan coba pake try catch si throws exceptionnya
     public void getCourses(String source, String destination, String vehicleType, String date, String hour) {
-        Log.d("msk getCourse","msk");
         Uri uri = Uri.parse(BASE_URL + COURSES).buildUpon().appendQueryParameter(SOURCE, source)
                 .appendQueryParameter(DESTINATION, destination)
                 .appendQueryParameter(VEHICLE, vehicleType)
                 .appendQueryParameter(DATE, date)
                 .appendQueryParameter(HOUR, hour).build();
-
-        Log.d("url get course",uri.toString());
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, uri.toString(), null, new Response.Listener<JSONObject>() {
             @Override
@@ -179,16 +170,13 @@ public class MainPresenter {
                         JSONArray arr = response.getJSONArray("payload");
                         for(int i=0;i<arr.length();i++){
                             JSONObject payload = arr.getJSONObject(i);
-                            Log.d("resp course",payload.toString());
                             String temp=payload.toString();
                             TravelCourses curCourse = gson.fromJson(temp,TravelCourses.class);
-                            Log.d("resp",curCourse.getCourseId());
                             addCourse(curCourse);
                         }
 
                     }else if(null==resp){
                         String errCode = response.getString("errcode");
-                        Log.d("getCourse",resp);
                         toastMessage(errCode);
                     }
                     Log.d("payload",resp);
@@ -213,14 +201,11 @@ public class MainPresenter {
             }
         };
 
-
         requestQueue.add(jsonObjectRequest);
-
     }
 //klo g jalan coba pake try catch si throws exceptionnya
     public void getTravelOrderHist(int limit, int offset) throws MalformedURLException {
         Uri uri = Uri.parse(BASE_URL + ORDERS).buildUpon().appendQueryParameter(LIMIT, String.valueOf(limit)).appendQueryParameter(OFFSET, String.valueOf(offset)).build();
-        Log.d("url hist",uri.toString());
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, uri.toString(), null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
@@ -259,7 +244,6 @@ public class MainPresenter {
     public void order(String course_id, String seats) throws JSONException {
         Pesan pesan = new Pesan(course_id,seats);
         String json = gson.toJson(pesan);
-        Log.d("jsonOrder",json);
         JSONObject jsonObject = new JSONObject(json);
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, BASE_URL + GET_ORDER, jsonObject, new Response.Listener<JSONObject>() {
             @Override
@@ -271,7 +255,6 @@ public class MainPresenter {
                     e.printStackTrace();
                 }
                 if(msg.equals("Order submitted")){
-                    Log.d("order",msg);
                     JSONArray arr = null;
                     try {
                         arr = response.getJSONArray("payload");
@@ -318,14 +301,11 @@ public class MainPresenter {
     }
 
     public void addCourse(TravelCourses course){
-        Log.d("addCourse", course.getCourseId());
-        Log.d("addCourse2", course.getVehicleType());
         this.currentCourse.add(course);
         updateStatusKursi();
     }
 
     public void addTravelOrderHist(TravelOrderHist travelOrder){
-        Log.d("msk tambah hist",travelOrder.getOrder_id());
         this.orderHist.add(travelOrder);
         updateHistory();
     }
@@ -360,9 +340,6 @@ public class MainPresenter {
 
         this.ui.updateAsal(this.asal);
         this.ui.updateTujuan(this.tujuan);
-
-        Log.d("asal",this.asal.toString());
-        Log.d("tujuan",this.tujuan.toString());
     }
 
     public void updateJam(){
@@ -392,7 +369,6 @@ public class MainPresenter {
         this.poolLocation.add(shuttleLocJkt);
         this.poolLocation.add(shuttleLocBek);
         this.poolLocation.add(shuttleLocCik);
-        Log.d("di mp",this.poolLocation.toString());
         this.ui.updatePoolLocation(this.poolLocation);
     }
 
@@ -411,12 +387,9 @@ public class MainPresenter {
             boolean[] booked=new boolean[6];
             boolean[] dipencet=new boolean[6];
             for(int i=0;i<tc.getSeats().length;i++){
-                Log.d("di presenter i ", String.valueOf(tc.getSeats()[i]-1));
                 booked[tc.getSeats()[i]-1]=true;
                 dipencet[tc.getSeats()[i]-1]=true;
             }
-            Log.d("booked",Arrays.toString(booked));
-            Log.d("dipencet",Arrays.toString(dipencet));
             ui.updateCourse(tc,booked,dipencet,11);
         }else if(tc.getVehicleType().equals("Large")){
             boolean[] booked=new boolean[10];
@@ -462,7 +435,6 @@ public class MainPresenter {
 
     public void displayTicket(Order order){
         String username = getUsernameFromDb();
-        Log.d("order",order.getOrderId());
         this.ui.displayTicket(order, username);
     }
 

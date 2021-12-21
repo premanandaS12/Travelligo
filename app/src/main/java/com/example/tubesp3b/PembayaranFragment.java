@@ -85,9 +85,6 @@ public class PembayaranFragment extends Fragment implements View.OnClickListener
 
             }
         });
-
-
-
         this.binding.btnOrder.setOnClickListener(this);
         this.binding.btnCancel.setOnClickListener(this);
 
@@ -113,9 +110,6 @@ public class PembayaranFragment extends Fragment implements View.OnClickListener
         this.binding.namaPemesanTiket.setText(this.username);
         this.binding.tvSeat.setText(this.seat);
         this.binding.tvVehicleType.setText(this.vehicleType);
-
-
-
     }
 
     @Override
@@ -195,8 +189,6 @@ public class PembayaranFragment extends Fragment implements View.OnClickListener
 
     @Override
     public void displayTicket(Order order, String username) {
-        Log.d("username pembayaran",username);
-
         Bundle tiket = new Bundle();
         tiket.putString("source",this.asal);
         tiket.putString("destination",this.tujuan);
@@ -213,7 +205,5 @@ public class PembayaranFragment extends Fragment implements View.OnClickListener
         this.getParentFragmentManager().setFragmentResult("changePage",bun);
 
     }
-
-
 }
 

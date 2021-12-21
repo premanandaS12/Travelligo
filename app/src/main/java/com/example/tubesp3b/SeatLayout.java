@@ -7,27 +7,17 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.os.Bundle;
-import android.util.Log;
-import android.util.TypedValue;
 import android.view.GestureDetector;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import java.util.ArrayList;
 import java.util.List;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentResultListener;
 
-import com.example.tubesp3b.databinding.FragmentHomeBinding;
 import com.example.tubesp3b.databinding.FragmentSelectSeatBinding;
 
 public class SeatLayout extends Fragment implements View.OnTouchListener, IMainActivity, View.OnClickListener {
@@ -232,7 +222,6 @@ public class SeatLayout extends Fragment implements View.OnTouchListener, IMainA
         if(view==this.binding.btnOrder){
             Bundle pembayaran = new Bundle();
             pembayaran.putString("username",this.mainPresenter.getUsernameFromDb());
-            Log.d("username",this.mainPresenter.getUsernameFromDb());
             pembayaran.putString("courseId", this.courseId);
             pembayaran.putString("source",this.asal);
             pembayaran.putString("destination",this.tujuan);
@@ -271,7 +260,6 @@ public class SeatLayout extends Fragment implements View.OnTouchListener, IMainA
 
         @Override
         public boolean onDown(MotionEvent e) {
-            Log.d("x dan y",String.valueOf(e.getX())+" dan "+String.valueOf(e.getY()));
             int top = 50;
             int bottom = 200;
             int counter=0;

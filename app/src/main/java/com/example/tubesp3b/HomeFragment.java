@@ -50,7 +50,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener, IMai
     @Override
     public void onClick(View view) {
         if(view==this.binding.btnBook){
-            Log.d("msk tombol","pencet");
             Bundle args = new Bundle();
             args.putInt("page",2);
             this.getParentFragmentManager().setFragmentResult("changePage",args);

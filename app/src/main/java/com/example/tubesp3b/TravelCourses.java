@@ -1,7 +1,5 @@
 package com.example.tubesp3b;
 
-import java.lang.reflect.Array;
-
 public class TravelCourses {
     private String course_id;
     private String source;
