@@ -76,7 +76,7 @@
                         android:layout_weight=".5"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
-                        android:text="Point"
+                        android:text="@string/tv_poin_prof"
                         android:textColor="@android:color/black"
                         android:textSize="17sp" />
 

@@ -329,7 +329,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="+021-1234560"
+                            android:text="@string/no_telp_home"
                             android:textAlignment="center"
                             android:textSize="20sp"
                             />
@@ -366,7 +366,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="0811225478"
+                            android:text="@string/no_wa_home"
                             android:textAlignment="center"
                             android:textSize="20sp"
                             />

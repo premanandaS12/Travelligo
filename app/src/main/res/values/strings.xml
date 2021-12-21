@@ -21,6 +21,8 @@
     <string name="contact_us">Contact Us</string>
     <string name="valid_shopeepay">Valid until 22/12/2021</string>
     <string name="cashback_shopeepay">Cashback Rp 30.000,-</string>
+    <string name="no_telp_home">+021-1234560</string>
+    <string name="no_wa_home">0811225478</string>
 
     <!--    fragment_pembayaran-->
     <string name="tv_pembayaran">Pembayaran</string>
@@ -40,20 +42,21 @@
     <string name="tv_totalint">200.000</string>
     <string name="but_pesan">Order</string>
     <string name="but_cancel">Batal</string>
+    <string name="harga_di_pembayaran">Rp 150.000</string>
+    <string name="vehicle_type_pemb">Vehicle Type</string>
+    <string name="order_pemb">Order</string>
+    <string name="cancel_pembayaran">Cancel</string>
 
     <!--    fragment_tiket-->
     <string name="tv_tiket">Tiket</string>
     <string name="tv_id">ID Tiket : </string>
     <string name="tv_idtiket">89165</string>
     <string name="tv_tanggalaja">1 Jan 2022</string>
-    <string name="tv_jamstr">Jam</string>
-    <string name="tv_jam">04.00</string>
-    <string name="tv_nama">Nama : </string>
-    <string name="tv_namapemesan">Anton Budiman</string>
     <string name="tv_asaltiket">JKT</string>
     <string name="tv_tujuantiket">BDG</string>
     <string name="tv_id_tiket">ID Tiket</string>
     <string name="tv_seat_tiket">Kursi</string>
+    <string name="tv_harga_tiket">Rp 150.000</string>
 
     <!--    frgament_point-->
     <string name="tv_point">Points</string>
@@ -71,6 +74,7 @@
     <string name="book_hist_tujuan">Jakarta</string>
     <string name="_20_december_2021">20 December 2021</string>
     <string name="seat_number">Seat number</string>
+    <string name="id_pemesan">ID</string>
 
 <!--    fragment_tiket_item-->
     <string name="tv_select">Select your Car!</string>
@@ -152,13 +156,23 @@
     <!--    fragment_profile-->
     <string name="tv_profile">Profile</string>
     <string name="tv_nama_pengguna">Nama Pengguna </string>
-    <string name="tv_user">User</string>
-    <string name="tv_nama_id">Nama Id :</string>
     <string name="tv_id_profile">id</string>
-    <string name="tv_total_poin">Total Poin :</string>
+    <string name="tv_poin_prof">Point</string>
     <string name="tv_400">400</string>
     <string name="tv_logout">Logout</string>
     <string name="vehicle_type">Vehicle Type</string>
+
+    <!--    fragment_gopay-->
+    <string name="tv_cashback_gopay">Cashback Rp 12.000</string>
+    <string name="tv_kalimat_gopay">Dapatkan cashback sebesar Rp 12.000 saat bayar tiket dengan Gopay.</string>
+
+    <!--    fragment_shopee-->
+    <string name="tv_cashback_ovo">Cashback Rp 10.000</string>
+    <string name="tv_kalimat_ovo">Dapatkan cashback sebesar Rp 10.000 saat bayar tiket dengan Ovo.</string>
+
+    <!--    fragment_ovo-->
+    <string name="tv_cashback_shopee">Cashback Rp 30.000</string>
+    <string name="tv_kalimat_shopee">Dapatkan cashback sebesar Rp 30.000 saat bayar tiket dengan Shopee.</string>
 
 
 </resources>

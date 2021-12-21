@@ -84,7 +84,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="1.5"
                 android:id="@+id/tv_harga_tiket"
-                android:text="Rp 150.000"
+                android:text="@string/tv_harga_tiket"
                 android:textSize="20dp"
                 android:textColor="@color/white"
                 android:textAlignment="center"
