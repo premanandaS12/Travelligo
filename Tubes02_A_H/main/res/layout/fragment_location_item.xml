@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_item"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:id="@+id/location_item"
+        android:orientation="vertical">
+        <TextView
+            android:fontFamily="@font/gotham"
+            android:id="@+id/city_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_bandung_location"
+            android:layout_marginLeft="20dp"
+            android:textSize="20sp"
+            android:layout_marginBottom="10sp"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".1"
+                android:src="@drawable/ic_location_24"
+                android:layout_marginLeft="20dp"/>
+
+            <TextView
+                android:fontFamily="@font/gotham"
+                android:id="@+id/address_location"
+                android:layout_width="0dp"
+                android:layout_weight=".9"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_jalan_pasteur"
+                android:layout_marginLeft="20dp"
+                android:textSize="20sp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="10dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

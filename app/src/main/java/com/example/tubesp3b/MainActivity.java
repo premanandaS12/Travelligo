@@ -29,11 +29,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     private ActivityMainBinding binding;
     FragmentManager fragmentManager;
     FragmentTransaction ft;
-    private BookNowFragment bookNowFragment;
-    NavController navController;
-    AppBarConfiguration appBarConfiguration;
     private Toolbar toolbar;
-    private AppBarConfiguration appBarConfig;
     private BottomNavigationView navView;
     private MainPresenter mainPresenter;
     private HomeFragment home;
@@ -84,6 +80,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         this.pembayaran = PembayaranFragment.newInstance(this,this);
         this.tiket = TiketFragment.newInstance(this,this);
 
+//        Check apakah user sudah login atau belum. jika sudah login, user akan memiliki token yang disimpan pada db
         if(this.mainPresenter.isLogin()==true){
             changePage(1);
         }else if(this.mainPresenter.isLogin()==false){
@@ -91,7 +88,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             this.binding.bottomNavigationView.setVisibility(View.GONE);
         }
 
-        //Change page
+        // Bundle Untuk Change page
         this.getSupportFragmentManager().setFragmentResultListener("changePage", this, new FragmentResultListener() {
             @Override
             public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
@@ -99,15 +96,11 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 changePage(page);
             }
         });
-//        NavHostFragment navHostFragment = (NavHostFragment) this.getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment_container);
-//        navController = Navigation.findNavController(this, R.id.fragmentContainerView);
-//        NavigationUI.setupWithNavController(this.binding.bottomNavigationView, navController);
 
-//        BottomNavigationView navbar = findViewById(R.id.bottomNavigationView);
-//        this.binding.bottomNavigationView.setVisibility(View.GONE);
 
     }
 
+//    Listener bottom navbar
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         if(item.getItemId()==R.id.nav_home){
@@ -122,6 +115,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         return true;
     }
 
+//    Method untuk change page
     public void changePage(int page) {
         FragmentTransaction ft =this.fragmentManager.beginTransaction();
         if(page==0){
@@ -225,4 +219,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     public void toastMessage(String msg) {
 
     }
+
+
 }

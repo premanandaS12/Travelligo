@@ -1,0 +1,179 @@
+<resources>
+    <string name="app_name">TubesP3B</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="let_s_sign_you_in">Let\'s sign you in.</string>
+    <string name="welcome_back">Welcome back.</string>
+    <string name="you_ve_been_missed">You\'ve been missed!</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="user">User</string>
+    <string name="_430_points">430 Points</string>
+    <string name="book">Book</string>
+    <string name="points">Points</string>
+    <string name="location">Location</string>
+    <string name="valid_until_gopay">Valid until 22/12/2022</string>
+    <string name="cashback_gopay">Cashback Rp 12.000,-</string>
+    <string name="valid_ovo">Valid until 22/12/2022</string>
+    <string name="cashback_ovo">Cashback Rp 10.000,-</string>
+    <string name="ongoing_promos">Ongoing Promos</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="valid_shopeepay">Valid until 22/12/2022</string>
+    <string name="cashback_shopeepay">Cashback Rp 30.000,-</string>
+    <string name="no_telp_home">+021-1234560</string>
+    <string name="no_wa_home">0811225478</string>
+
+    <!--    fragment_pembayaran-->
+    <string name="tv_pembayaran">Pembayaran</string>
+    <string name="tv_asal">Asal : </string>
+    <string name="tv_asalkota">Jakarta</string>
+    <string name="tv_tujuan">Tujuan : </string>
+    <string name="tv_kotatujuan">Bandung</string>
+    <string name="tv_tanggalstr">Tanggal  </string>
+    <string name="tv_tanggal">1 Jan 2022 04:00</string>
+    <string name="tv_seat">Seat : </string>
+    <string name="tv_seatint">1,4</string>
+    <string name="tv_harga">Harga : </string>
+    <string name="tv_hargaint">200.000</string>
+    <string name="tv_diskon">Diskon : </string>
+    <string name="tv_diskonint">0</string>
+    <string name="tv_total">Total : </string>
+    <string name="tv_totalint">200.000</string>
+    <string name="but_pesan">Order</string>
+    <string name="but_cancel">Batal</string>
+    <string name="harga_di_pembayaran">Rp 150.000</string>
+    <string name="vehicle_type_pemb">Vehicle Type</string>
+    <string name="order_pemb">Order</string>
+    <string name="cancel_pembayaran">Cancel</string>
+
+    <!--    fragment_tiket-->
+    <string name="tv_tiket">Tiket</string>
+    <string name="tv_id">ID Tiket : </string>
+    <string name="tv_idtiket">89165</string>
+    <string name="tv_tanggalaja">1 Jan 2022</string>
+    <string name="tv_asaltiket">JKT</string>
+    <string name="tv_tujuantiket">BDG</string>
+    <string name="tv_id_tiket">ID Tiket</string>
+    <string name="tv_seat_tiket">Kursi</string>
+    <string name="tv_harga_tiket">Rp 150.000</string>
+
+    <!--    frgament_point-->
+    <string name="tv_point">Points</string>
+    <string name="tv_points">Points : </string>
+    <string name="tv_pointint">430</string>
+
+    <!--    location_list-->
+    <string name="tv_location">Bandung</string>
+    <string name="booking_id">Booking id:</string>
+    <string name="bandung_jalan_dipatiukur_no_62">Bandung | Jalan Dipatiukur no. 62</string>
+    <string name="nama_pemesan">Nama</string>
+    <string name="tanggal_keberangkatan">Tanggal Keberangkatan: </string>
+    <string name="jam_keberangkatan">Jam Keberangkatan:</string>
+    <string name="book_hist_asal">Bandung</string>
+    <string name="book_hist_tujuan">Jakarta</string>
+    <string name="_20_december_2021">20 December 2021</string>
+    <string name="seat_number">Seat number</string>
+    <string name="id_pemesan">ID</string>
+
+<!--    fragment_tiket_item-->
+    <string name="tv_select">Select your Car!</string>
+    <string name="tv_jakarta">Jakarta</string>
+    <string name="tv_bandung">Bandung</string>
+    <string name="tv_tanggalhari">12th - Feb - 2021 | Tuesday</string>
+    <string name="tv_jamam">9:00AM</string>
+    <string name="tv_asaltujuan">Bandung - Jakarta</string>
+    <string name="tv_tanggalitem">4 Desember 2021</string>
+    <string name="tv_hargaitem">Rp. 200.000</string>
+    <string name="tv_jamam2">10:00AM</string>
+    <string name="tv_bandunggarut">Bandung - Garut</string>
+    <string name="tv_tanggal6">6 Desember 2021</string>
+    <string name="tv_harga200">Rp. 200.000</string>
+    <string name="tv_jamam3">12:15PM</string>
+    <string name="tv_bandungjakarta">Bandung - Jakarta</string>
+    <string name="tv_tanggal8">8 Desember 2021</string>
+    <string name="tv_harga180">Rp. 180.000</string>
+    <string name="tv_jamam4">3:00PM</string>
+    <string name="tv_bandunggarut2">Bandung - Garut</string>
+    <string name="tv_10des">10 Desember 2021</string>
+    <string name="tv_180">Rp. 180.000</string>
+    <string name="tv_7pm">7:00PM</string>
+    <string name="tv_jakartabandung2">Jakarta - Bandung</string>
+    <string name="tv_12des">12 Desember 2021</string>
+    <string name="tv_200">Rp. 200.000</string>
+
+
+    <!--    fragment_select_seat-->
+    <string name="tv_select_seat">Select your Seat!</string>
+    <string name="tv_bandung_seat">Bandung</string>
+    <string name="tv_jakarta_seat">Jakarta</string>
+    <string name="tv_tanggal_seat">08th - Des - 2021 | Wednesday</string>
+    <string name="tv_mobilbesar">Mobil Besar</string>
+    <string name="tv_acsleeper">A/C</string>
+    <string name="tv_hargaseat">Rp.200.000</string>
+    <string name="tv_booked">Booked</string>
+    <string name="tv_available">Available</string>
+    <string name="tv_your_seat">Your Seat</string>
+    <string name="tv_1">1</string>
+    <string name="tv_a">A</string>
+    <string name="tv_b">B</string>
+    <string name="tv_2">2</string>
+    <string name="tv_3">3</string>
+    <string name="tv_4">4</string>
+    <string name="tv_5">5</string>
+
+    <!--    fragment_select_seat_kecil-->
+    <string name="select_your_seat">Select your Seat!</string>
+    <string name="bandung">Bandung</string>
+    <string name="jakarta">Jakarta</string>
+    <string name="_08th_des_2021_wednesday">08th - Des - 2021 | Wednesday</string>
+    <string name="mobil_kecil">Mobil Kecil</string>
+    <string name="a_c_sleeper_2_seats">A/C</string>
+    <string name="rp_180_000">Rp.180.000</string>
+    <string name="booked">Booked</string>
+    <string name="available">Available</string>
+    <string name="your_seat">Your Seat</string>
+    <string name="_1">1</string>
+    <string name="a">A</string>
+    <string name="b">B</string>
+    <string name="_2">2</string>
+    <string name="_3">3</string>
+
+    <!--    fragment_location_item-->
+    <string name="tv_bandung_location">Bandung</string>
+    <string name="tv_jalan_pasteur">Jalan Pasteur No. 16A</string>
+
+    <!--    fragment_book_now-->
+    <string name="tv_tujuan_perjalanan">Tujuan Perjalanan</string>
+    <string name="tv_asal_book">Asal</string>
+    <string name="tv_tujuan_book">Tujuan</string>
+    <string name="tv_tanggal_perjalanan">Tanggal Perjalanan</string>
+    <string name="tv_tanggal_berangkat">Tanggal Berangkat</string>
+    <string name="tv_waktu_berangkat">Waktu Berangkat</string>
+    <string name="tv_vehicle_type">Vehicle Type</string>
+    <string name="tv_booking_sekarang">Booking Sekarang</string>
+
+    <!--    fragment_profile-->
+    <string name="tv_profile">Profile</string>
+    <string name="tv_nama_pengguna">Nama Pengguna </string>
+    <string name="tv_id_profile">id</string>
+    <string name="tv_poin_prof">Point</string>
+    <string name="tv_400">400</string>
+    <string name="tv_logout">Logout</string>
+    <string name="vehicle_type">Vehicle Type</string>
+
+    <!--    fragment_gopay-->
+    <string name="tv_cashback_gopay">Cashback Rp 12.000</string>
+    <string name="tv_kalimat_gopay">Dapatkan cashback sebesar Rp 12.000 saat bayar tiket dengan Gopay.</string>
+
+    <!--    fragment_shopee-->
+    <string name="tv_cashback_ovo">Cashback Rp 10.000</string>
+    <string name="tv_kalimat_ovo">Dapatkan cashback sebesar Rp 10.000 saat bayar tiket dengan Ovo.</string>
+
+    <!--    fragment_ovo-->
+    <string name="tv_cashback_shopee">Cashback Rp 30.000</string>
+    <string name="tv_kalimat_shopee">Dapatkan cashback sebesar Rp 30.000 saat bayar tiket dengan Shopee.</string>
+    <string name="_0_points">0 Points</string>
+
+
+</resources>
