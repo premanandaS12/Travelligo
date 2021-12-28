@@ -37,7 +37,6 @@ public class ShopeeFragment extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         binding = FragmentShopeeBinding.inflate(inflater);
         View view = binding.getRoot();
 

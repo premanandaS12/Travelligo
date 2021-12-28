@@ -1,9 +1,5 @@
 package com.example.tubesp3b;
 
-import android.text.format.Time;
-
-import java.util.Date;
-
 public class Payload {
     private String source;
     private String destination;

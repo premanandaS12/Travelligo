@@ -30,7 +30,7 @@
         <entry key="..\:/Tubes P3B (new)/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Tubes P3B (new)/app/src/main/res/layout/fragment_book_now.xml" value="0.15" />
         <entry key="..\:/Tubes P3B (new)/app/src/main/res/layout/fragment_gopay.xml" value="0.1" />
-        <entry key="..\:/Tubes P3B (new)/app/src/main/res/layout/fragment_home.xml" value="0.1" />
+        <entry key="..\:/Tubes P3B (new)/app/src/main/res/layout/fragment_home.xml" value="0.18" />
         <entry key="..\:/Tubes P3B (new)/app/src/main/res/layout/fragment_list_tiket.xml" value="0.20416666666666666" />
         <entry key="..\:/Tubes P3B (new)/app/src/main/res/layout/fragment_location.xml" value="0.1" />
         <entry key="..\:/Tubes P3B (new)/app/src/main/res/layout/fragment_location_item.xml" value="0.1" />
@@ -41,12 +41,12 @@
         <entry key="..\:/Tubes P3B (new)/app/src/main/res/layout/fragment_pembayaran.xml" value="0.22" />
         <entry key="..\:/Tubes P3B (new)/app/src/main/res/layout/fragment_point.xml" value="0.1" />
         <entry key="..\:/Tubes P3B (new)/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
-        <entry key="..\:/Tubes P3B (new)/app/src/main/res/layout/fragment_select_seat.xml" value="0.67" />
+        <entry key="..\:/Tubes P3B (new)/app/src/main/res/layout/fragment_select_seat.xml" value="0.25" />
         <entry key="..\:/Tubes P3B (new)/app/src/main/res/layout/fragment_select_seat_kecil.xml" value="0.25" />
         <entry key="..\:/Tubes P3B (new)/app/src/main/res/layout/fragment_shopee.xml" value="0.1" />
         <entry key="..\:/Tubes P3B (new)/app/src/main/res/layout/fragment_splash.xml" value="0.21" />
         <entry key="..\:/Tubes P3B (new)/app/src/main/res/layout/fragment_tiket.xml" value="0.25" />
-        <entry key="..\:/Tubes P3B (new)/app/src/main/res/layout/fragment_tiket_item.xml" value="0.1" />
+        <entry key="..\:/Tubes P3B (new)/app/src/main/res/layout/fragment_tiket_item.xml" value="0.18" />
         <entry key="..\:/Tubes P3B (new)/app/src/main/res/layout/location_list.xml" value="0.25" />
         <entry key="..\:/Tubes P3B (new)/app/src/main/res/layout/toolbar.xml" value="0.21" />
         <entry key="..\:/Tubes P3B (new)/app/src/main/res/menu/bottom_menu.xml" value="0.18425925925925926" />
